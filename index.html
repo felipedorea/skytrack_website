@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+
+<html lang="pt-br" style="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    .glass-header {
+      background-color: rgba(8, 19, 42, 0.4);
+      backdrop-filter: blur(24px);
+      transition: all 0.3s ease;
+    }
+
+    .header-solid {
+      background-color: rgba(8, 19, 42, 0.8);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    @keyframes fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(28px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes glow-pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 22px rgba(100, 255, 218, 0.25)
+      }
+
+      50% {
+        box-shadow: 0 0 46px rgba(100, 255, 218, 0.55)
+      }
+    }
+
+    @keyframes shimmer-sweep {
+      from {
+        transform: translateX(-100%)
+      }
+
+      to {
+        transform: translateX(100%)
+      }
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    [id] {
+      scroll-margin-top: 96px
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease, transform .8s cubic-bezier(.16, 1, .3, 1)
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: none
+    }
+
+    .stagger-1 {
+      transition-delay: .08s
+    }
+
+    .stagger-2 {
+      transition-delay: .16s
+    }
+
+    .stagger-3 {
+      transition-delay: .24s
+    }
+
+    .stagger-4 {
+      transition-delay: .32s
+    }
+
+    .stagger-5 {
+      transition-delay: .4s
+    }
+
+    .stagger-6 {
+      transition-delay: .48s
+    }
+
+    .stagger-7 {
+      transition-delay: .56s
+    }
+
+    .stagger-8 {
+      transition-delay: .64s
+    }
+
+    .stagger-9 {
+      transition-delay: .72s
+    }
+
+    .glow-pulse {
+      animation: glow-pulse 2.6s ease-in-out infinite
+    }
+
+    .shimmer-sweep {
+      position: relative;
+      overflow: hidden
+    }
+
+    .shimmer-sweep::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 45%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      animation: shimmer-sweep 2.2s ease-in-out infinite
+    }
+
+    .spotlight-card {
+      position: relative;
+      overflow: hidden
+    }
+
+    .spotlight-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(560px circle at var(--mx, 50%) var(--my, 50%), rgba(100, 255, 218, 0.14), transparent 40%);
+      opacity: 0;
+      transition: opacity .4s ease;
+      pointer-events: none;
+      z-index: 1
+    }
+
+    .spotlight-card>* {
+      position: relative;
+      z-index: 1
+    }
+
+    .spotlight-card:hover::before {
+      opacity: 1
+    }
+
+    .progress-fill {
+      transition: width 1.4s cubic-bezier(.16, 1, .3, 1)
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none
+      }
+
+      .glow-pulse,
+      .shimmer-sweep::after {
+        animation: none
+      }
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-primary": "#006b58", "on-primary-container": "#003b2f", "surface-tint": "#64ffda", "surface-container-highest": "#2a344d", "error": "#ffb4ab", "secondary-fixed-dim": "#b9c7e4", "inverse-surface": "#d9e2ff", "on-tertiary": "#20304f", "on-tertiary-container": "#556486", "surface-bright": "#2f3952", "error-container": "#93000a", "surface-container-high": "#1f2942", "on-primary-fixed-variant": "#005142", "secondary": "#b9c7e4", "tertiary-fixed-dim": "#b6c6ed", "outline-variant": "#3c4a45", "primary-container": "#64ffda", "primary-fixed-dim": "#38debb", "on-secondary": "#233148", "secondary-fixed": "#d6e3ff", "surface-variant": "#2a344d", "primary-fixed": "#64ffda", "surface-dim": "#08132a", "on-secondary-fixed": "#0d1c32", "secondary-container": "#3c4962", "on-primary-fixed": "#002019", "tertiary-container": "#d8e2ff", "on-surface-variant": "#bacac3", "on-secondary-container": "#abb9d6", "surface-container": "#151f37", "on-error-container": "#ffdad6", "primary": "#ffffff", "tertiary": "#ffffff", "on-primary": "#00382d", "on-surface": "#d9e2ff", "surface-container-lowest": "#030d25", "background": "#08132a", "surface-container-low": "#101b33", "outline": "#85948e", "on-tertiary-fixed": "#091b39", "on-secondary-fixed-variant": "#39475f", "inverse-on-surface": "#263049", "tertiary-fixed": "#d8e2ff", "on-tertiary-fixed-variant": "#374767", "surface": "#08132a", "on-error": "#690005", "on-background": "#d9e2ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "container-margin": "24px", "stack-md": "16px", "gutter": "16px", "stack-sm": "8px", "unit": "4px", "stack-lg": "32px" }, "fontFamily": { "title-md": ["Inter"], "headline-lg": ["Inter"], "mono-data": ["Space Mono"], "headline-lg-mobile": ["Inter"], "display-lg": ["Inter"], "label-caps": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"] }, "fontSize": { "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "mono-data": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "28px", "fontWeight": "400" }] } } } }</script>
+</head>
+
+<body
+  class="bg-background font-body-lg text-on-surface antialiased selection:bg-surface-tint/30 selection:text-surface-tint">
+  <header class="fixed top-0 w-full z-50 glass-header border-b border-white/5" id="main-header">
+    <div class="h-16 w-full px-container-margin flex items-center justify-between">
+      <div class="flex items-center gap-stack-md"><img alt="Skytrack Logo" class="h-8 w-auto object-contain"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1J7naNo6hBpd2nKaBE-iHl-wWTESasHQMcDOvPC_eGsvIPuraVe10ekqQm0y_wVRd7RSTuYi8eX7e97fssIxd96kSIX1X60NUkYxi3XujXwZOnn0F-IGqiwhJqoJ1Nm4Dn-VlWIdVhjWT5qMsNrQ8PB3rAGTzl6C0g1fPBNBZYA4nOZy5XfHansIssZl1KiNxOeqhxnAsKaqHP5-edwSCMi3O96K4_THIFQhbgiuHeZvE-M_NYe6D" /><span
+          class="font-title-md text-title-md text-primary tracking-tight hidden sm:block">SKYTRACK</span></div>
+      <nav class="hidden lg:flex items-center gap-stack-lg ml-auto mr-stack-lg"
+        data-active-classes="text-primary font-semibold"><a aria-current="page"
+          class="transition-colors uppercase text-primary font-semibold tracking-wider text-sm" data-path="resumo"
+          href="#resumo">Resumo</a><a
+          class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider"
+          data-path="funcionalidades" href="#funcionalidades">Funcionalidades</a>
+        <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider"
+          data-path="diferenciais" href="#diferenciais">Diferenciais</a>
+        <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider"
+          data-path="comunidade" href="#comunidade">Comunidade</a>
+        <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider"
+          data-path="jogos-suportados" href="#jogos-suportados">Jogos Suportados</a>
+      </nav>
+      <div class="flex items-center gap-stack-md"><a
+          class="hidden lg:inline-flex bg-surface-tint/10 text-surface-tint border border-surface-tint/30 px-6 py-2 rounded-full font-label-caps text-label-caps uppercase hover:bg-surface-tint hover:text-on-primary-container hover:shadow-[0_0_20px_rgba(100,255,218,0.4)] transition-all duration-300"
+          data-path="download" href="#download">Download</a><button
+          class="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-full bg-surface-container/50 border border-white/10 text-surface-tint"
+          id="nav-toggle" aria-controls="nav-mobile" aria-expanded="false" aria-label="Abrir menu"><span
+            class="material-symbols-outlined text-3xl">menu</span></button></div>
+    </div>
+    <nav
+      class="lg:hidden hidden absolute top-16 left-0 right-0 flex flex-col gap-1 bg-surface-container/95 backdrop-blur-2xl border-b border-white/10 px-6 py-6 shadow-2xl z-40"
+      id="nav-mobile" data-active-classes="text-primary font-semibold"><a
+        class="rounded-xl px-4 py-3 font-label-caps text-label-caps text-on-surface-variant hover:text-primary hover:bg-surface-container-high uppercase tracking-wider transition-colors"
+        data-path="resumo" href="#resumo">Resumo</a><a
+        class="rounded-xl px-4 py-3 font-label-caps text-label-caps text-on-surface-variant hover:text-primary hover:bg-surface-container-high uppercase tracking-wider transition-colors"
+        data-path="funcionalidades" href="#funcionalidades">Funcionalidades</a><a
+        class="rounded-xl px-4 py-3 font-label-caps text-label-caps text-on-surface-variant hover:text-primary hover:bg-surface-container-high uppercase tracking-wider transition-colors"
+        data-path="diferenciais" href="#diferenciais">Diferenciais</a><a
+        class="rounded-xl px-4 py-3 font-label-caps text-label-caps text-on-surface-variant hover:text-primary hover:bg-surface-container-high uppercase tracking-wider transition-colors"
+        data-path="comunidade" href="#comunidade">Comunidade</a><a
+        class="rounded-xl px-4 py-3 font-label-caps text-label-caps text-on-surface-variant hover:text-primary hover:bg-surface-container-high uppercase tracking-wider transition-colors"
+        data-path="jogos-suportados" href="#jogos-suportados">Jogos Suportados</a><a
+        class="mt-2 inline-flex items-center justify-center bg-surface-tint text-on-primary-container px-6 py-3 rounded-full font-label-caps text-label-caps uppercase font-semibold"
+        data-path="download" href="#download">Download</a></nav>
+  </header>
+  <main class="w-full pt-16">
+    <div class="flex flex-col w-full">
+      <!-- Hero Section -->
+      <section
+        class="relative w-full h-[100vh] flex items-center justify-center -mt-16 pt-16 overflow-hidden bg-surface-dim">
+        <div class="absolute inset-0 z-0">
+          <img alt="Skytrack Hero"
+            class="w-full h-full object-cover opacity-50 mix-blend-overlay scale-[1.15] will-change-transform"
+            id="hero-bg" src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787160820/VAL_crsec7.png" />
+          <div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
+          <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-surface-tint/10 via-transparent to-transparent">
+          </div>
+        </div>
+        <div
+          class="relative z-10 px-container-margin max-w-7xl mx-auto flex flex-col items-center text-center gap-stack-lg">
+          <div class="flex flex-col gap-6 items-center">
+            <span
+              class="px-4 py-1.5 rounded-full border border-surface-tint/30 bg-surface-tint/5 text-surface-tint font-label-caps text-label-caps tracking-[0.2em] backdrop-blur-sm reveal">O
+              NOVO PADRÃO EM TELEMETRIA</span>
+            <h1
+              class="font-display-lg text-5xl md:text-6xl text-primary max-w-4xl tracking-tight leading-[1.1] font-bold reveal stagger-1">
+              Skytrack: Eleve sua experiência de voo
+            </h1>
+            <p
+              class="font-body-lg text-xl text-on-surface-variant max-w-2xl mx-auto font-light leading-relaxed reveal stagger-2">
+              A ferramenta definitiva de tracking e telemetria para entusiastas da aviação virtual. Assuma o controle
+              total do seu cockpit virtual hoje mesmo.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-4 justify-center reveal stagger-3">
+            <a class="mt-4 inline-flex items-center justify-center bg-surface-tint text-on-primary-container px-8 py-3 rounded-full font-title-md text-base hover:shadow-[0_0_30px_rgba(100,255,218,0.4)] hover:-translate-y-1 transition-all duration-300 font-semibold glow-pulse"
+              href="#download">
+              Comece Agora - É Grátis
+            </a>
+            <a class="mt-4 inline-flex items-center justify-center bg-transparent border border-surface-tint/50 text-surface-tint px-8 py-3 rounded-full font-title-md text-base hover:bg-surface-tint/10 transition-all duration-300 font-semibold"
+              href="#resumo">
+              Descubra Mais
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- Resumo Section -->
+      <section class="w-full py-32 bg-surface-container-lowest relative overflow-hidden" id="resumo">
+        <div
+          class="absolute top-0 right-0 w-[800px] h-[800px] bg-surface-tint/5 blur-[120px] rounded-full pointer-events-none">
+        </div>
+        <div
+          class="max-w-7xl mx-auto px-container-margin grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
+          <div class="flex flex-col gap-8 relative items-center lg:items-start text-center lg:text-left">
+            <div class="relative z-10">
+              <h2 class="font-label-caps text-label-caps text-surface-tint uppercase tracking-[0.2em] mb-4">Visão Geral
+              </h2>
+              <h3 class="font-headline-lg text-4xl text-primary mb-6 leading-tight">Seu copiloto digital definitivo.
+              </h3>
+              <p class="font-body-lg text-lg text-on-surface-variant leading-relaxed mb-8">
+                O Skytrack é um companion app all-in-one projetado para elevar o nível da sua simulação de voo. Ele
+                unifica telemetria avançada, planejamento de rotas e monitoramento ambiental em uma interface
+                profissional inspirada em sistemas de aviônicos reais. Tenha os dados vitais do seu voo sempre à mão.
+              </p>
+              <div class="flex flex-wrap gap-6 mb-8 justify-center lg:justify-start">
+                <div
+                  class="flex items-center gap-3 bg-surface-container/50 border border-white/5 backdrop-blur-md px-4 py-2.5 rounded-xl">
+                  <span class="material-symbols-outlined text-surface-tint">speed</span>
+                  <span class="font-mono-data text-mono-data text-on-surface">Baixo Impacto</span>
+                </div>
+                <div
+                  class="flex items-center gap-3 bg-surface-container/50 border border-white/5 backdrop-blur-md px-4 py-2.5 rounded-xl">
+                  <span class="material-symbols-outlined text-surface-tint">api</span>
+                  <span class="font-mono-data text-mono-data text-on-surface">Dados em Tempo Real</span>
+                </div>
+              </div>
+              <a class="inline-flex items-center justify-center bg-surface-tint text-on-primary-container px-8 py-3 rounded-full font-title-md text-base hover:shadow-[0_0_20px_rgba(100,255,218,0.4)] transition-all duration-300 font-semibold w-fit"
+                href="#funcionalidades">
+                Explorar Sistemas
+              </a>
+            </div>
+          </div>
+          <div
+            class="relative w-full sm:aspect-video rounded-3xl overflow-hidden border border-white/10 bg-surface-container/40 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.5)] group">
+            <div
+              class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-surface-tint/5 via-background/80 to-background">
+            </div>
+            <div class="relative w-full aspect-video sm:aspect-auto sm:h-full">
+              <div class="relative w-full h-full transition-transform duration-1000 group-hover:scale-105">
+                <div
+                  class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(100,255,218,0.08),_transparent_60%)]">
+                </div>
+                <svg class="absolute inset-0 w-full h-full opacity-80" preserveaspectratio="xMidYMid slice"
+                  viewbox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <pattern id="skygrid" width="40" height="40" patternunits="userSpaceOnUse"
+                      patterntransform="scale(1.15)">
+                      <path d="M40 0H0V40" stroke="rgba(255,255,255,0.07)" stroke-width="1"></path>
+                    </pattern>
+                    <radialgradient id="skyradar" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="rgba(100,255,218,0.22)"></stop>
+                      <stop offset="100%" stop-color="rgba(100,255,218,0)"></stop>
+                    </radialgradient>
+                  </defs>
+                  <rect width="800" height="400" fill="url(#skygrid)"></rect>
+                  <circle cx="400" cy="200" r="170" fill="url(#skyradar)"></circle>
+                  <path d="M80 120 Q280 60 460 220 T740 260" stroke="rgba(100,255,218,0.6)" stroke-width="2"
+                    stroke-dasharray="8 8"></path>
+                  <circle class="animate-pulse" cx="400" cy="200" r="4" fill="#64ffda"></circle>
+                  <line x1="400" y1="200" x2="520" y2="150" stroke="rgba(100,255,218,0.35)" stroke-width="1"
+                    stroke-dasharray="3 4"></line>
+                  <text x="80" y="132" fill="#64ffda" font-family="Space Mono, monospace" font-size="13"
+                    font-weight="700">KJFK</text>
+                  <text x="745" y="272" fill="#64ffda" font-family="Space Mono, monospace" font-size="13"
+                    font-weight="700">EGLL</text>
+                  <text x="500" y="140" fill="rgba(255,255,255,0.55)" font-family="Space Mono, monospace"
+                    font-size="11">FL 350</text>
+                  <text x="500" y="158" fill="rgba(255,255,255,0.55)" font-family="Space Mono, monospace"
+                    font-size="11">GS 480 KT</text>
+                </svg>
+                <div class="absolute top-6 left-6 flex flex-col gap-1 font-mono-data text-xs text-surface-tint/90">
+                  <span>HDG 070°</span>
+                  <span>MACH .78</span>
+                  <span>FUEL 12,400 LB</span>
+                </div>
+                <div
+                  class="absolute top-6 right-6 flex flex-col gap-1 font-mono-data text-xs text-surface-tint/90 text-right">
+                  <span>VOR 115.3</span>
+                  <span>RADAR ON</span>
+                  <span>TAILWIND 8 KT</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="relative sm:absolute sm:bottom-6 sm:left-6 sm:right-6 mx-4 mt-4 mb-4 sm:my-0 sm:mx-0 bg-surface/80 backdrop-blur-xl rounded-2xl p-5 sm:p-6 border border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 shadow-2xl">
+              <div class="flex flex-col gap-1 items-center sm:items-start">
+                <span class="font-label-caps text-xs text-on-surface-variant uppercase tracking-widest">Voo Atual</span>
+                <span class="font-mono-data text-sm text-primary tracking-wide">AAL123 | KJFK → EGLL</span>
+              </div>
+              <div
+                class="h-1.5 w-full sm:w-auto sm:flex-1 sm:mx-8 bg-surface-container-highest rounded-full overflow-hidden">
+                <div class="progress-fill h-full bg-surface-tint shadow-[0_0_12px_rgba(100,255,218,0.8)] relative"
+                  data-progress="33" style="width:0">
+                  <div class="absolute inset-0 shimmer-sweep"></div>
+                </div>
+              </div>
+              <div class="flex flex-col text-center sm:text-right gap-1">
+                <span class="font-label-caps text-xs text-on-surface-variant uppercase tracking-widest">Status</span>
+                <span class="font-mono-data text-sm text-surface-tint tracking-wide">EM ROTA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Funcionalidades Grid -->
+      <section class="w-full py-32 bg-[whitesmoke] relative" id="funcionalidades">
+        <div
+          class="absolute top-1/2 left-0 w-[600px] h-[600px] bg-[#00695c]/10 blur-[120px] rounded-full pointer-events-none -translate-y-1/2 -translate-x-1/2">
+        </div>
+        <div class="max-w-7xl mx-auto px-container-margin flex flex-col gap-20 relative z-10">
+          <div class="flex flex-col items-center text-center gap-4">
+            <h2 class="font-label-caps text-label-caps text-[#00695c] uppercase tracking-[0.2em]">Sistemas de Bordo</h2>
+            <h3 class="font-headline-lg text-4xl md:text-5xl text-surface-container-lowest tracking-tight">
+              Funcionalidades Integradas</h3>
+            <p class="font-body-lg text-xl text-[#4d5c5a] max-w-2xl mx-auto font-light">Tudo o que você precisa para uma
+              operação de voo completa e profissional, em uma única interface.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div
+              class="reveal spotlight-card stagger-1 bg-white/70 backdrop-blur-lg hover:bg-white/90 transition-all duration-500 p-10 rounded-3xl border border-black/5 hover:border-[#00695c]/40 flex flex-col gap-6 group hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,105,92,0.12)]">
+              <div
+                class="w-14 h-14 rounded-2xl bg-[#00695c]/10 flex items-center justify-center text-[#00695c] group-hover:scale-110 transition-transform duration-500 group-hover:bg-[#00695c] group-hover:text-white">
+                <span class="material-symbols-outlined text-3xl">explore</span>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h4 class="font-title-md text-2xl text-surface-container-lowest">Tracking &amp; Telemetria</h4>
+                <p class="font-body-lg text-[#4d5c5a] leading-relaxed">Monitoramento em tempo real de altitude,
+                  velocidade e sistemas críticos da aeronave.</p>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div
+              class="reveal spotlight-card stagger-2 bg-white/70 backdrop-blur-lg hover:bg-white/90 transition-all duration-500 p-10 rounded-3xl border border-black/5 hover:border-[#00695c]/40 flex flex-col gap-6 group hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,105,92,0.12)]">
+              <div
+                class="w-14 h-14 rounded-2xl bg-[#00695c]/10 flex items-center justify-center text-[#00695c] group-hover:scale-110 transition-transform duration-500 group-hover:bg-[#00695c] group-hover:text-white">
+                <span class="material-symbols-outlined text-3xl">flight_takeoff</span>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h4 class="font-title-md text-2xl text-surface-container-lowest">Integração Simbrief</h4>
+                <p class="font-body-lg text-[#4d5c5a] leading-relaxed">Importação instantânea de planos de voo, pesos e
+                  balanceamento diretamente do seu despacho.</p>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div
+              class="reveal spotlight-card stagger-3 bg-white/70 backdrop-blur-lg hover:bg-white/90 transition-all duration-500 p-10 rounded-3xl border border-black/5 hover:border-[#00695c]/40 flex flex-col gap-6 group hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,105,92,0.12)]">
+              <div
+                class="w-14 h-14 rounded-2xl bg-[#00695c]/10 flex items-center justify-center text-[#00695c] group-hover:scale-110 transition-transform duration-500 group-hover:bg-[#00695c] group-hover:text-white">
+                <span class="material-symbols-outlined text-3xl">layers</span>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h4 class="font-title-md text-2xl text-surface-container-lowest">Mapa em Camadas</h4>
+                <p class="font-body-lg text-[#4d5c5a] leading-relaxed">Visualização de rota com sobreposição de dados
+                  meteorológicos dinâmicos.</p>
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div
+              class="reveal spotlight-card stagger-4 bg-white/70 backdrop-blur-lg hover:bg-white/90 transition-all duration-500 p-10 rounded-3xl border border-black/5 hover:border-[#00695c]/40 flex flex-col gap-6 group hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,105,92,0.12)]">
+              <div
+                class="w-14 h-14 rounded-2xl bg-[#00695c]/10 flex items-center justify-center text-[#00695c] group-hover:scale-110 transition-transform duration-500 group-hover:bg-[#00695c] group-hover:text-white">
+                <span class="material-symbols-outlined text-3xl">headset_mic</span>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h4 class="font-title-md text-2xl text-surface-container-lowest">Áudio de Cabine</h4>
+                <p class="font-body-lg text-[#4d5c5a] leading-relaxed">Integração com addons de áudio para imersão total
+                  nos anúncios da tripulação.</p>
+              </div>
+            </div>
+            <!-- Card 5 -->
+            <div
+              class="reveal spotlight-card stagger-5 bg-white/70 backdrop-blur-lg hover:bg-white/90 transition-all duration-500 p-10 rounded-3xl border border-black/5 hover:border-[#00695c]/40 flex flex-col gap-6 group hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,105,92,0.12)]">
+              <div
+                class="w-14 h-14 rounded-2xl bg-[#00695c]/10 flex items-center justify-center text-[#00695c] group-hover:scale-110 transition-transform duration-500 group-hover:bg-[#00695c] group-hover:text-white">
+                <span class="material-symbols-outlined text-3xl">air</span>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h4 class="font-title-md text-2xl text-surface-container-lowest">METAR ao Vivo</h4>
+                <p class="font-body-lg text-[#4d5c5a] leading-relaxed">Condições climáticas atualizadas via chave API
+                  AVWX para precisão meteorológica.</p>
+              </div>
+            </div>
+            <!-- Card 6 -->
+            <div
+              class="reveal spotlight-card stagger-6 bg-white/70 backdrop-blur-lg hover:bg-white/90 transition-all duration-500 p-10 rounded-3xl border border-black/5 hover:border-[#00695c]/40 flex flex-col gap-6 group hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,105,92,0.12)]">
+              <div
+                class="w-14 h-14 rounded-2xl bg-[#00695c]/10 flex items-center justify-center text-[#00695c] group-hover:scale-110 transition-transform duration-500 group-hover:bg-[#00695c] group-hover:text-white">
+                <span class="material-symbols-outlined text-3xl">webhook</span>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h4 class="font-title-md text-2xl text-surface-container-lowest">Integração Discord</h4>
+                <p class="font-body-lg text-[#4d5c5a] leading-relaxed">Webhooks automatizados para relatar etapas do voo
+                  e o debriefing final na sua comunidade.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Feature List Condensed -->
+          <div class="w-full flex flex-wrap justify-center gap-8 pt-12 border-t border-black/10">
+            <div
+              class="flex items-center gap-3 text-[#4d5c5a] bg-[#00695c]/5 px-5 py-2.5 rounded-full border border-black/10 backdrop-blur-sm">
+              <span class="material-symbols-outlined text-xl text-[#00695c]">check_circle</span>
+              <span class="font-mono-data text-sm">Salvamento de Voos</span>
+            </div>
+            <div
+              class="flex items-center gap-3 text-[#4d5c5a] bg-[#00695c]/5 px-5 py-2.5 rounded-full border border-black/10 backdrop-blur-sm">
+              <span class="material-symbols-outlined text-xl text-[#00695c]">check_circle</span>
+              <span class="font-mono-data text-sm">Notas de Despesa</span>
+            </div>
+            <div
+              class="flex items-center gap-3 text-[#4d5c5a] bg-[#00695c]/5 px-5 py-2.5 rounded-full border border-black/10 backdrop-blur-sm">
+              <span class="material-symbols-outlined text-xl text-[#00695c]">check_circle</span>
+              <span class="font-mono-data text-sm">Escala de Voo</span>
+            </div>
+            <div
+              class="flex items-center gap-3 text-[#4d5c5a] bg-[#00695c]/5 px-5 py-2.5 rounded-full border border-black/10 backdrop-blur-sm">
+              <span class="material-symbols-outlined text-xl text-[#00695c]">check_circle</span>
+              <span class="font-mono-data text-sm">Checklists Interativos</span>
+            </div>
+          </div>
+          <div class="flex justify-center mt-8">
+            <a class="inline-flex items-center justify-center bg-surface-tint text-on-primary-container px-8 py-3 rounded-full font-title-md text-base hover:shadow-[0_0_20px_rgba(100,255,218,0.4)] transition-all duration-300 font-semibold"
+              href="#diferenciais">
+              Ver Detalhes Técnicos
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- Stats Section -->
+      <section class="w-full py-24 bg-background relative" id="stats">
+        <div class="max-w-7xl mx-auto px-container-margin grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="reveal stagger-1 spotlight-card bg-surface-container/30 backdrop-blur-lg border border-white/5 hover:border-surface-tint/30 rounded-3xl p-8 flex flex-col items-center gap-3 text-center transition-all duration-300 hover:-translate-y-1">
+            <span class="material-symbols-outlined text-3xl text-surface-tint">download</span>
+            <div class="flex items-baseline gap-1">
+              <span class="font-display-lg text-4xl md:text-5xl text-primary font-bold" data-count="10000"
+                data-format="pt">0</span>
+              <span class="text-surface-tint text-3xl">+</span>
+            </div>
+            <span
+              class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Downloads</span>
+          </div>
+          <div
+            class="reveal stagger-2 spotlight-card bg-surface-container/30 backdrop-blur-lg border border-white/5 hover:border-surface-tint/30 rounded-3xl p-8 flex flex-col items-center gap-3 text-center transition-all duration-300 hover:-translate-y-1">
+            <span class="material-symbols-outlined text-3xl text-surface-tint">rocket_launch</span>
+            <div class="flex items-baseline gap-1">
+              <span class="font-display-lg text-4xl md:text-5xl text-primary font-bold" data-count="2"
+                data-format="none">0</span>
+            </div>
+            <span
+              class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Simuladores</span>
+          </div>
+          <div
+            class="reveal stagger-3 spotlight-card bg-surface-container/30 backdrop-blur-lg border border-white/5 hover:border-surface-tint/30 rounded-3xl p-8 flex flex-col items-center gap-3 text-center transition-all duration-300 hover:-translate-y-1">
+            <span class="material-symbols-outlined text-3xl text-surface-tint">memory</span>
+            <div class="flex items-baseline gap-1">
+              <span class="font-display-lg text-4xl md:text-5xl text-primary font-bold" data-count="45"
+                data-format="none">0</span>
+              <span class="text-surface-tint text-3xl">MB</span>
+            </div>
+            <span
+              class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Instalação</span>
+          </div>
+          <div
+            class="reveal stagger-4 spotlight-card bg-surface-container/30 backdrop-blur-lg border border-white/5 hover:border-surface-tint/30 rounded-3xl p-8 flex flex-col items-center gap-3 text-center transition-all duration-300 hover:-translate-y-1">
+            <span class="material-symbols-outlined text-3xl text-surface-tint">monitor_heart</span>
+            <div class="flex items-baseline gap-1">
+              <span class="font-display-lg text-4xl md:text-5xl text-primary font-bold" data-count="24"
+                data-format="none">0</span>
+              <span class="text-surface-tint text-3xl">/7</span>
+            </div>
+            <span
+              class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Telemetria</span>
+          </div>
+        </div>
+      </section>
+      <!-- Diferenciais Section -->
+      <section class="w-full py-32 bg-surface-container-lowest overflow-hidden relative" id="diferenciais">
+        <div
+          class="max-w-7xl mx-auto px-container-margin grid grid-cols-1 lg:grid-cols-12 gap-20 items-center relative z-10">
+          <div class="lg:col-span-5 flex flex-col gap-10 items-center lg:items-start text-center lg:text-left">
+            <div>
+              <h2 class="font-label-caps text-label-caps text-surface-tint uppercase tracking-[0.2em] mb-4">Engenharia
+                de Software</h2>
+              <h3 class="font-headline-lg text-4xl text-primary leading-tight">Instrumentação de Precisão</h3>
+            </div>
+            <p class="font-body-lg text-lg text-on-surface-variant leading-relaxed">
+              Desenhado para não interferir na performance do simulador. O Skytrack roda de forma leve em segundo plano,
+              entregando dados profundos através de uma interface limpa, focada e esteticamente impecável. Performance
+              máxima, distração mínima.
+            </p>
+            <div class="flex flex-col gap-8 border-l-0 lg:border-l-2 border-surface-tint/30 pl-0 lg:pl-8">
+              <div class="relative">
+                <div
+                  class="hidden lg:block absolute -left-[35px] top-1 w-2 h-2 rounded-full bg-surface-tint ring-4 ring-background">
+                </div>
+                <h4 class="font-title-md text-xl text-primary mb-2">Estética Profissional</h4>
+                <p class="font-body-lg text-on-surface-variant">Interface escura, modo noturno otimizado e tipografia de
+                  alta legibilidade (HUD Style).</p>
+              </div>
+              <div class="relative">
+                <div
+                  class="hidden lg:block absolute -left-[35px] top-1 w-2 h-2 rounded-full bg-surface-tint ring-4 ring-background">
+                </div>
+                <h4 class="font-title-md text-xl text-primary mb-2">Zero Stutters</h4>
+                <p class="font-body-lg text-on-surface-variant">Arquitetura otimizada que consome o mínimo de CPU e RAM,
+                  garantindo FPS estáveis.</p>
+              </div>
+            </div>
+            <a class="mt-4 inline-flex items-center justify-center bg-surface-tint text-on-primary-container px-8 py-3 rounded-full font-title-md text-base hover:shadow-[0_0_20px_rgba(100,255,218,0.4)] transition-all duration-300 font-semibold w-fit"
+              href="#download">
+              Baixar para Windows
+            </a>
+          </div>
+          <div class="lg:col-span-7 relative h-[600px] group">
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest via-transparent to-transparent z-10 w-32">
+            </div>
+            <img alt="Skytrack Dashboard Interface"
+              class="w-full h-full object-cover rounded-3xl border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.6)] transition-transform duration-700 group-hover:scale-[1.02]"
+              src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787161781/Novo_Projeto_2_ysuwtn.png" />
+            <div class="absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/10 z-20 pointer-events-none"></div>
+          </div>
+        </div>
+      </section>
+      <!-- Comunidade & Parceria Section -->
+      <section class="w-full py-32 bg-background relative overflow-hidden" id="comunidade">
+        <div
+          class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-surface-tint/5 via-background to-background z-0">
+        </div>
+        <div class="max-w-7xl mx-auto px-container-margin relative z-10">
+          <div class="flex flex-col items-center text-center gap-4 mb-20">
+            <h2 class="font-label-caps text-label-caps text-surface-tint uppercase tracking-[0.2em]">Comunidade &amp;
+              Parceria</h2>
+            <h3 class="font-headline-lg text-4xl md:text-5xl text-primary tracking-tight">Voe Acompanhado</h3>
+            <p class="font-body-lg text-xl text-on-surface-variant max-w-2xl mx-auto font-light">Junte-se a milhares de
+              pilotos virtuais. Compartilhe conhecimentos, rotas e a paixão pela aviação.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Virtual Alliance -->
+            <div
+              class="bg-surface-container/30 backdrop-blur-xl p-12 rounded-[2rem] border border-white/10 flex flex-col gap-6 relative overflow-hidden group hover:border-surface-tint/30 transition-colors duration-500">
+              <div
+                class="absolute top-0 right-0 w-80 h-80 bg-surface-tint/10 rounded-full blur-[80px] -mr-32 -mt-32 transition-transform group-hover:scale-150 duration-700 pointer-events-none">
+              </div>
+              <div
+                class="w-16 h-16 rounded-2xl bg-surface-container flex items-center justify-center border border-white/10 text-surface-tint z-10 shadow-lg">
+                <span class="material-symbols-outlined text-3xl">public</span>
+              </div>
+              <div class="z-10 flex flex-col gap-4">
+                <h4 class="font-title-md text-3xl text-primary">Virtual Alliance</h4>
+                <p class="font-body-lg text-on-surface-variant leading-relaxed">Nosso parceiro oficial. A comunidade
+                  definitiva para pilotos virtuais que buscam um ambiente estruturado, realista e colaborativo para
+                  elevar sua simulação ao nível aéreo.</p>
+              </div>
+              <div class="mt-auto pt-8 z-10">
+                <a class="inline-flex items-center justify-center bg-surface-tint/10 border border-surface-tint text-surface-tint px-8 py-3 rounded-full font-title-md text-base hover:bg-surface-tint hover:text-on-primary-container hover:shadow-[0_0_20px_rgba(100,255,218,0.4)] transition-all duration-300 w-full sm:w-auto"
+                  href="#">
+                  Conheça o site
+                  <span class="material-symbols-outlined ml-2 text-xl">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+            <!-- Discord -->
+            <div
+              class="bg-surface-container/30 backdrop-blur-xl p-12 rounded-[2rem] border border-white/10 flex flex-col gap-6 relative overflow-hidden group hover:border-surface-tint/30 transition-colors duration-500">
+              <div
+                class="absolute top-0 right-0 w-80 h-80 bg-[#5865F2]/10 rounded-full blur-[80px] -mr-32 -mt-32 transition-transform group-hover:scale-150 duration-700 pointer-events-none">
+              </div>
+              <div
+                class="w-16 h-16 rounded-2xl bg-surface-container flex items-center justify-center border border-white/10 text-[#5865F2] z-10 shadow-lg">
+                <svg class="w-8 h-8 fill-current" viewbox="0 0 127.14 96.36" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1,105.25,105.25,0,0,0,32.19-16.14h0C127.86,52.43,122.1,28.55,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.31,60,73.31,53s5-12.74,11.43-12.74S96.2,46,96.09,53,91.08,65.69,84.69,65.69Z">
+                  </path>
+                </svg>
+              </div>
+              <div class="z-10 flex flex-col gap-4">
+                <h4 class="font-title-md text-3xl text-primary">Servidor Discord</h4>
+                <p class="font-body-lg text-on-surface-variant leading-relaxed">O centro de comando da nossa comunidade.
+                  Obtenha suporte em tempo real, compartilhe relatórios de voo e conecte-se com outros entusiastas da
+                  aviação.</p>
+              </div>
+              <div class="mt-auto pt-8 z-10">
+                <a class="inline-flex items-center justify-center bg-surface-tint text-on-primary-container px-8 py-3 rounded-full font-title-md text-base transition-all duration-300 w-full sm:w-auto shadow-lg hover:shadow-[0_0_20px_rgba(100,255,218,0.4)] hover:-translate-y-1 font-semibold"
+                  href="#">
+                  Entrar no Discord
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Jogos Suportados -->
+      <section class="w-full py-32 bg-surface-container-lowest" id="jogos-suportados">
+        <div class="max-w-5xl mx-auto px-container-margin text-center flex flex-col items-center gap-16">
+          <div class="flex flex-col gap-4">
+            <h2 class="font-label-caps text-label-caps text-surface-tint uppercase tracking-[0.2em]">Compatibilidade
+            </h2>
+            <h3 class="font-headline-lg text-4xl text-primary">Preparado para decolagem</h3>
+            <p class="font-body-lg text-xl text-on-surface-variant max-w-2xl mx-auto font-light">Integração perfeita com
+              as principais plataformas de simulação do mercado. Voe sem limites.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+            <div
+              class="bg-surface-container/30 backdrop-blur-md p-10 rounded-3xl border border-white/5 flex flex-col items-center justify-center gap-6 hover:border-surface-tint/30 transition-all duration-300 hover:bg-surface-container/50">
+              <span class="material-symbols-outlined text-5xl text-on-surface-variant">flight</span>
+              <h4 class="font-title-md text-2xl text-primary text-center">Microsoft Flight Simulator 2020</h4>
+              <span
+                class="px-4 py-1.5 bg-surface-tint/10 border border-surface-tint/20 text-surface-tint font-mono-data text-xs tracking-widest font-bold rounded-full">SUPORTE
+                TOTAL</span>
+            </div>
+            <div
+              class="bg-surface-container/30 backdrop-blur-md p-10 rounded-3xl border border-white/5 flex flex-col items-center justify-center gap-6 hover:border-surface-tint/30 transition-all duration-300 hover:bg-surface-container/50 relative overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-br from-surface-tint/5 to-transparent pointer-events-none">
+              </div>
+              <span class="material-symbols-outlined text-5xl text-surface-tint relative z-10">rocket_launch</span>
+              <h4 class="font-title-md text-2xl text-primary text-center relative z-10">Microsoft Flight Simulator 2024
+              </h4>
+              <span
+                class="px-4 py-1.5 bg-surface-tint/10 border border-surface-tint/20 text-surface-tint font-mono-data text-xs tracking-widest font-bold rounded-full relative z-10">SUPORTE
+                TOTAL</span>
+            </div>
+          </div>
+          <div class="flex justify-center mt-4">
+            <a class="inline-flex items-center justify-center bg-surface-tint text-on-primary-container px-8 py-3 rounded-full font-title-md text-base hover:shadow-[0_0_20px_rgba(100,255,218,0.4)] transition-all duration-300 font-semibold"
+              href="#download">
+              Inicie sua Jornada
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- Galeria Section -->
+      <section class="w-full py-32 bg-[whitesmoke] relative overflow-hidden" id="galeria">
+        <div class="max-w-6xl mx-auto px-container-margin relative z-10 flex flex-col gap-14">
+          <div class="flex flex-col items-center text-center gap-4 reveal">
+            <h2 class="font-label-caps text-label-caps text-[#00695c] uppercase tracking-[0.2em]">Capturas de Tela</h2>
+            <h3 class="font-headline-lg text-4xl md:text-5xl text-surface-container-lowest tracking-tight">Veja o
+              Skytrack em ação</h3>
+            <p class="font-body-lg text-xl text-[#4d5c5a] max-w-2xl mx-auto font-light">Uma prévia da interface de
+              comandos projetada para simular instrumentos reais de aeronave.</p>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
+            <div
+              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] reveal stagger-1"
+              data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuASSXAf3l4ybBA-bZtAT84Y3kHwNK4hkwkJ3rtlCy5gjxrtqtu6mcCCUBHYmaWnaUVXSV5RODpRO9vZJ6SYcFZG5TgG76OwPxRAqAP6wqM_gyz-l7sYrjgWqY7LslihPKgZX0di-8Ef4LMJemRx8f5LS5vJR7TyvN9WcD7IXeqHZjUwTPCxtWfcK_zRXxnhDr3Z89pTIrrN7tsmJ31SHEcBMnXjx7KoQanwcRs3Jon97u_5YjVyVDgP"
+              role="button" tabindex="0">
+              <img alt="Screenshot Dashboard de Telemetria"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuASSXAf3l4ybBA-bZtAT84Y3kHwNK4hkwkJ3rtlCy5gjxrtqtu6mcCCUBHYmaWnaUVXSV5RODpRO9vZJ6SYcFZG5TgG76OwPxRAqAP6wqM_gyz-l7sYrjgWqY7LslihPKgZX0di-8Ef4LMJemRx8f5LS5vJR7TyvN9WcD7IXeqHZjUwTPCxtWfcK_zRXxnhDr3Z89pTIrrN7tsmJ31SHEcBMnXjx7KoQanwcRs3Jon97u_5YjVyVDgP" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+              <div
+                class="absolute bottom-3 left-3 bg-black/55 backdrop-blur-md rounded-lg px-3 py-1.5 font-mono-data text-xs text-surface-tint">
+                DASHBOARD DE TELEMETRIA</div>
+              <div
+                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="material-symbols-outlined text-white/90 text-4xl">zoom_in</span>
+              </div>
+            </div>
+            <div
+              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] reveal stagger-2"
+              data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuAphrVjOFuOAlj7Kk8rQIRLog1e1LhsPFo2ToYk4O3eoajZWkY-XPBnjlVpI5tybQGpD1vjxUAN9nN5A9ip6klkT5BCCsOEr28ggmjAebQhVPvO-jykWEY2arWGuCWySYVxotS2BMxdNIaj1p3gRCP583qbO55EhO0z05EMxTEme8rSrvLtgvTcdz49IjhzlLCSJ375xOYJHPPDSxQwvW7CH19Pms5x0nBGgsQBIVUk7s6xz0EB-K6z"
+              role="button" tabindex="0">
+              <img alt="Screenshot Mapa em Camadas"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAphrVjOFuOAlj7Kk8rQIRLog1e1LhsPFo2ToYk4O3eoajZWkY-XPBnjlVpI5tybQGpD1vjxUAN9nN5A9ip6klkT5BCCsOEr28ggmjAebQhVPvO-jykWEY2arWGuCWySYVxotS2BMxdNIaj1p3gRCP583qbO55EhO0z05EMxTEme8rSrvLtgvTcdz49IjhzlLCSJ375xOYJHPPDSxQwvW7CH19Pms5x0nBGgsQBIVUk7s6xz0EB-K6z" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+              <div
+                class="absolute bottom-3 left-3 bg-black/55 backdrop-blur-md rounded-lg px-3 py-1.5 font-mono-data text-xs text-surface-tint">
+                MAPA EM CAMADAS</div>
+              <div
+                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="material-symbols-outlined text-white/90 text-4xl">zoom_in</span>
+              </div>
+            </div>
+            <div
+              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] reveal stagger-3"
+              data-src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='750'%3E%3Cdefs%3E%3CradialGradient id='r' cx='50%25' cy='35%25' r='75%25'%3E%3Cstop offset='0%25' stop-color='%2338debb' stop-opacity='0.35'/%3E%3Cstop offset='100%25' stop-color='%2308132a'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='1200' height='750' fill='url(%23r)'/%3E%3C/svg%3E"
+              role="button" tabindex="0">
+              <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_#38debb33,_#08132a_70%)]"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-40"><span
+                  class="material-symbols-outlined text-surface-tint text-6xl">air</span></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div
+                class="absolute bottom-3 left-3 bg-black/55 backdrop-blur-md rounded-lg px-3 py-1.5 font-mono-data text-xs text-surface-tint">
+                METAR AO VIVO</div>
+              <div
+                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="material-symbols-outlined text-white/90 text-4xl">zoom_in</span>
+              </div>
+            </div>
+            <div
+              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] reveal stagger-4"
+              data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuASSXAf3l4ybBA-bZtAT84Y3kHwNK4hkwkJ3rtlCy5gjxrtqtu6mcCCUBHYmaWnaUVXSV5RODpRO9vZJ6SYcFZG5TgG76OwPxRAqAP6wqM_gyz-l7sYrjgWqY7LslihPKgZX0di-8Ef4LMJemRx8f5LS5vJR7TyvN9WcD7IXeqHZjUwTPCxtWfcK_zRXxnhDr3Z89pTIrrN7tsmJ31SHEcBMnXjx7KoQanwcRs3Jon97u_5YjVyVDgP"
+              role="button" tabindex="0">
+              <img alt="Screenshot Planejamento de Rota"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuASSXAf3l4ybBA-bZtAT84Y3kHwNK4hkwkJ3rtlCy5gjxrtqtu6mcCCUBHYmaWnaUVXSV5RODpRO9vZJ6SYcFZG5TgG76OwPxRAqAP6wqM_gyz-l7sYrjgWqY7LslihPKgZX0di-8Ef4LMJemRx8f5LS5vJR7TyvN9WcD7IXeqHZjUwTPCxtWfcK_zRXxnhDr3Z89pTIrrN7tsmJ31SHEcBMnXjx7KoQanwcRs3Jon97u_5YjVyVDgP" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+              <div
+                class="absolute bottom-3 left-3 bg-black/55 backdrop-blur-md rounded-lg px-3 py-1.5 font-mono-data text-xs text-surface-tint">
+                PLANEJAMENTO DE ROTA</div>
+              <div
+                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="material-symbols-outlined text-white/90 text-4xl">zoom_in</span>
+              </div>
+            </div>
+            <div
+              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] reveal stagger-5"
+              data-src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='750'%3E%3Cdefs%3E%3CradialGradient id='r' cx='50%25' cy='35%25' r='75%25'%3E%3Cstop offset='0%25' stop-color='%2338debb' stop-opacity='0.35'/%3E%3Cstop offset='100%25' stop-color='%2308132a'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='1200' height='750' fill='url(%23r)'/%3E%3C/svg%3E"
+              role="button" tabindex="0">
+              <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_#38debb33,_#08132a_70%)]"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-40"><span
+                  class="material-symbols-outlined text-surface-tint text-6xl">headset_mic</span></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div
+                class="absolute bottom-3 left-3 bg-black/55 backdrop-blur-md rounded-lg px-3 py-1.5 font-mono-data text-xs text-surface-tint">
+                ÁUDIO DE CABINE</div>
+              <div
+                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="material-symbols-outlined text-white/90 text-4xl">zoom_in</span>
+              </div>
+            </div>
+            <div
+              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] reveal stagger-6"
+              data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuAphrVjOFuOAlj7Kk8rQIRLog1e1LhsPFo2ToYk4O3eoajZWkY-XPBnjlVpI5tybQGpD1vjxUAN9nN5A9ip6klkT5BCCsOEr28ggmjAebQhVPvO-jykWEY2arWGuCWySYVxotS2BMxdNIaj1p3gRCP583qbO55EhO0z05EMxTEme8rSrvLtgvTcdz49IjhzlLCSJ375xOYJHPPDSxQwvW7CH19Pms5x0nBGgsQBIVUk7s6xz0EB-K6z"
+              role="button" tabindex="0">
+              <img alt="Screenshot Checklists Interativos"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAphrVjOFuOAlj7Kk8rQIRLog1e1LhsPFo2ToYk4O3eoajZWkY-XPBnjlVpI5tybQGpD1vjxUAN9nN5A9ip6klkT5BCCsOEr28ggmjAebQhVPvO-jykWEY2arWGuCWySYVxotS2BMxdNIaj1p3gRCP583qbO55EhO0z05EMxTEme8rSrvLtgvTcdz49IjhzlLCSJ375xOYJHPPDSxQwvW7CH19Pms5x0nBGgsQBIVUk7s6xz0EB-K6z" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+              <div
+                class="absolute bottom-3 left-3 bg-black/55 backdrop-blur-md rounded-lg px-3 py-1.5 font-mono-data text-xs text-surface-tint">
+                CHECKLISTS INTERATIVOS</div>
+              <div
+                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="material-symbols-outlined text-white/90 text-4xl">zoom_in</span>
+              </div>
+            </div>
+            <div
+              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] reveal stagger-7"
+              data-src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='750'%3E%3Cdefs%3E%3CradialGradient id='r' cx='50%25' cy='35%25' r='75%25'%3E%3Cstop offset='0%25' stop-color='%2338debb' stop-opacity='0.35'/%3E%3Cstop offset='100%25' stop-color='%2308132a'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='1200' height='750' fill='url(%23r)'/%3E%3C/svg%3E"
+              role="button" tabindex="0">
+              <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_#38debb33,_#08132a_70%)]"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-40"><span
+                  class="material-symbols-outlined text-surface-tint text-6xl">webhook</span></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div
+                class="absolute bottom-3 left-3 bg-black/55 backdrop-blur-md rounded-lg px-3 py-1.5 font-mono-data text-xs text-surface-tint">
+                RELATÓRIOS NO DISCORD</div>
+              <div
+                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="material-symbols-outlined text-white/90 text-4xl">zoom_in</span>
+              </div>
+            </div>
+            <div
+              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] reveal stagger-8"
+              data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuASSXAf3l4ybBA-bZtAT84Y3kHwNK4hkwkJ3rtlCy5gjxrtqtu6mcCCUBHYmaWnaUVXSV5RODpRO9vZJ6SYcFZG5TgG76OwPxRAqAP6wqM_gyz-l7sYrjgWqY7LslihPKgZX0di-8Ef4LMJemRx8f5LS5vJR7TyvN9WcD7IXeqHZjUwTPCxtWfcK_zRXxnhDr3Z89pTIrrN7tsmJ31SHEcBMnXjx7KoQanwcRs3Jon97u_5YjVyVDgP"
+              role="button" tabindex="0">
+              <img alt="Screenshot Escala de Voo"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuASSXAf3l4ybBA-bZtAT84Y3kHwNK4hkwkJ3rtlCy5gjxrtqtu6mcCCUBHYmaWnaUVXSV5RODpRO9vZJ6SYcFZG5TgG76OwPxRAqAP6wqM_gyz-l7sYrjgWqY7LslihPKgZX0di-8Ef4LMJemRx8f5LS5vJR7TyvN9WcD7IXeqHZjUwTPCxtWfcK_zRXxnhDr3Z89pTIrrN7tsmJ31SHEcBMnXjx7KoQanwcRs3Jon97u_5YjVyVDgP" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+              <div
+                class="absolute bottom-3 left-3 bg-black/55 backdrop-blur-md rounded-lg px-3 py-1.5 font-mono-data text-xs text-surface-tint">
+                ESCALA DE VOO</div>
+              <div
+                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="material-symbols-outlined text-white/90 text-4xl">zoom_in</span>
+              </div>
+            </div>
+            <div
+              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] reveal stagger-9"
+              data-src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='750'%3E%3Cdefs%3E%3CradialGradient id='r' cx='50%25' cy='35%25' r='75%25'%3E%3Cstop offset='0%25' stop-color='%2338debb' stop-opacity='0.35'/%3E%3Cstop offset='100%25' stop-color='%2308132a'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='1200' height='750' fill='url(%23r)'/%3E%3C/svg%3E"
+              role="button" tabindex="0">
+              <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_#38debb33,_#08132a_70%)]"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-40"><span
+                  class="material-symbols-outlined text-surface-tint text-6xl">receipt_long</span></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div
+                class="absolute bottom-3 left-3 bg-black/55 backdrop-blur-md rounded-lg px-3 py-1.5 font-mono-data text-xs text-surface-tint">
+                NOTAS DE DESPESA</div>
+              <div
+                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="material-symbols-outlined text-white/90 text-4xl">zoom_in</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Lightbox -->
+      <div class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-6"
+        id="lightbox" role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+        <button
+          class="absolute top-6 right-6 w-12 h-12 rounded-full bg-surface-container/80 border border-white/10 flex items-center justify-center text-on-surface hover:text-surface-tint transition-colors"
+          id="lightbox-close" aria-label="Fechar"><span class="material-symbols-outlined text-3xl">close</span></button>
+        <img alt="Imagem ampliada" class="max-w-full max-h-[85vh] rounded-2xl border border-white/10 shadow-2xl"
+          id="lightbox-img" src="" />
+      </div>
+      <!-- FAQ Section -->
+      <section class="w-full py-32 bg-background relative overflow-hidden" id="faq">
+        <div class="max-w-4xl mx-auto px-container-margin relative z-10">
+          <div class="flex flex-col items-center text-center gap-4 mb-16">
+            <h2 class="font-label-caps text-label-caps text-surface-tint uppercase tracking-[0.2em]">Perguntas
+              Frequentes</h2>
+            <h3 class="font-headline-lg text-4xl text-primary tracking-tight">Tire suas dúvidas</h3>
+          </div>
+          <div class="flex flex-col gap-4">
+            <details
+              class="group bg-surface-container/30 border border-white/5 rounded-2xl [&amp;_summary::-webkit-details-marker]:hidden">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-title-md text-lg text-primary">
+                <span class="font-semibold">O Skytrack causa queda de FPS (stutters) no simulador?</span>
+                <span
+                  class="material-symbols-outlined transition-transform duration-300 group-open:-rotate-180 text-surface-tint">expand_more</span>
+              </summary>
+              <div class="px-6 pb-6 text-on-surface-variant font-body-lg">
+                Não. O Skytrack foi desenvolvido com uma arquitetura de baixo impacto, garantindo que o desempenho do
+                seu simulador permaneça inalterado.
+              </div>
+            </details>
+            <details
+              class="group bg-surface-container/30 border border-white/5 rounded-2xl [&amp;_summary::-webkit-details-marker]:hidden">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-title-md text-lg text-primary">
+                <span class="font-semibold">Preciso pagar alguma mensalidade?</span>
+                <span
+                  class="material-symbols-outlined transition-transform duration-300 group-open:-rotate-180 text-surface-tint">expand_more</span>
+              </summary>
+              <div class="px-6 pb-6 text-on-surface-variant font-body-lg">
+                O aplicativo base e suas principais funcionalidades de tracking são totalmente gratuitos.
+              </div>
+            </details>
+            <details
+              class="group bg-surface-container/30 border border-white/5 rounded-2xl [&amp;_summary::-webkit-details-marker]:hidden">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-title-md text-lg text-primary">
+                <span class="font-semibold">Como funciona a integração com o Simbrief?</span>
+                <span
+                  class="material-symbols-outlined transition-transform duration-300 group-open:-rotate-180 text-surface-tint">expand_more</span>
+              </summary>
+              <div class="px-6 pb-6 text-on-surface-variant font-body-lg">
+                Basta inserir seu ID/Username do Simbrief nas configurações. O Skytrack buscará automaticamente seu
+                plano de voo
+                mais recente, incluindo rotas, carga, combustível e metar dos aeroportos de origem e destino.
+              </div>
+            </details>
+            <details
+              class="group bg-surface-container/30 border border-white/5 rounded-2xl [&amp;_summary::-webkit-details-marker]:hidden">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-title-md text-lg text-primary">
+                <span class="font-semibold">O software funciona em redes como VATSIM ou IVAO?</span>
+                <span
+                  class="material-symbols-outlined transition-transform duration-300 group-open:-rotate-180 text-surface-tint">expand_more</span>
+              </summary>
+              <div class="px-6 pb-6 text-on-surface-variant font-body-lg">
+                Sim! O Skytrack é totalmente compatível e não interfere com clientes de voo online. Ele atua como um
+                EFIS auxiliar.
+              </div>
+            </details>
+            <details
+              class="group bg-surface-container/30 border border-white/5 rounded-2xl [&amp;_summary::-webkit-details-marker]:hidden">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-title-md text-lg text-primary">
+                <span class="font-semibold">O software contém as cartas?</span>
+                <span
+                  class="material-symbols-outlined transition-transform duration-300 group-open:-rotate-180 text-surface-tint">expand_more</span>
+              </summary>
+              <div class="px-6 pb-6 text-on-surface-variant font-body-lg">
+                Não, ainda não temos integração com as cartas aeronáuticas.
+              </div>
+            </details>
+            <details
+              class="group bg-surface-container/30 border border-white/5 rounded-2xl [&amp;_summary::-webkit-details-marker]:hidden">
+              <summary class="flex items-center justify-between p-6 cursor-pointer font-title-md text-lg text-primary">
+                <span class="font-semibold">O software funciona com Linux?</span>
+                <span
+                  class="material-symbols-outlined transition-transform duration-300 group-open:-rotate-180 text-surface-tint">expand_more</span>
+              </summary>
+              <div class="px-6 pb-6 text-on-surface-variant font-body-lg">
+                Não, ainda não temos suporte ao Linux, apenas Windows 10/11.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+      <!-- Download Section -->
+      <section class="w-full py-40 bg-surface-dim relative overflow-hidden" id="download">
+        <div class="absolute inset-0 z-0">
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-surface-tint/5 blur-[120px] rounded-full pointer-events-none">
+          </div>
+        </div>
+        <div class="max-w-4xl mx-auto px-container-margin relative z-10 text-center flex flex-col items-center gap-10">
+          <div class="flex flex-col gap-6 items-center">
+            <span
+              class="px-4 py-1.5 rounded-full border border-surface-tint/30 bg-surface-tint/5 text-surface-tint font-label-caps text-label-caps tracking-[0.2em] backdrop-blur-sm">FAÇA
+              O DOWNLOAD AGORA E APROVEITE</span>
+            <h2 class="font-display-lg text-5xl md:text-6xl text-primary leading-[1.1] font-bold tracking-tight">
+              A evolução do seu <br />
+              <span class="text-surface-tint">cockpit digital.</span>
+            </h2>
+            <p class="font-body-lg text-xl text-on-surface-variant max-w-2xl font-light">
+              Eleve o realismo dos seus voos hoje. Baixe o Skytrack gratuitamente e junte-se à comunidade de pilotos
+              virtuais que já transformaram sua simulação.
+            </p>
+          </div>
+          <!-- <div class="flex items-center gap-2 mb-2">
+            <div class="flex -space-x-2">
+              <img alt="User" class="w-10 h-10 rounded-full border-2 border-background object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqU_zR9S_VBo1_vNHuXEXcbVJAt-byo551vINTQjU2kQTePrV4XM82Y3_Jjv5ZI1Aj7s7SLPCl-WsDnX1YQ4U0c-vs1g0FRDpK1t9QpFGG_iuXcYTAs40Ma3L3rSRlxZIO2vQzBs6vRBZfhgcK66ml8TLcYqdOxMX2QMPQNb9oU9aMnzsUpj9tRyv6i-cwzDl-Xt5or9uPYKef-lYz0jCfxr1GeAsmU3RiCTX6A4wzcRGNh46x-QWR" />
+              <img alt="User" class="w-10 h-10 rounded-full border-2 border-background object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5rTY88c5b4ijIOMrU5ZsepqE6-SauvG-0AHtOnJLca1Z-Pl0w8OZmi5yXjeFCwFmtjJqiwQ4Xb05_PhOSQ9hxhEG836lvWWcAyKB8gnqZvLT0rhVXmWq5bx_hucpQ0e-ZJALimSKQxtcj8TGZMwQt88qUe1FlcDp2YFi_Nkj2VJKBfQCN9zRrI_NTdqatNFKj4Uaev-oXJNzyoEtxXUp42sglMZvyYEJ641kbUHGT8eFxyOG5mb-r" />
+              <img alt="User" class="w-10 h-10 rounded-full border-2 border-background object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwYsPLv6QmzSxDqP7doQ2zV78ikujVfWhPOCquW83k2Lxbm2imZGx-uvSWt1cV7PviR4wvV3OTLO_hiLK_AQJ56HvXQcaAWrNMlHC0tbK94l-M_gzKk9J4ZfxMKmSHgpomN4qMCtn5yklmktWt06yKYA0fNrG8Tnv-Zz0FtkIWsfLGt3ZWD5oeg5GCS9XL01OPZHV9u2cJoud5Lb8Y84eRWUo5T_gR-AQ5K2yIaPVAo8nrBe5T6vgm" />
+              <img alt="User" class="w-10 h-10 rounded-full border-2 border-background object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYKl6DdghXcfrOdw0wCeiUtFie6ac475J8-YS6HKyUGYqQ1CQ15T7m7jHAowSilc5qtm7Tc0aWpd6pldzO5hKu52RFmDQYlzQR1itXJgoSa9W8r4Q9gPUPZDgk9wXDCIEaCOETGsAo_5NcU_0ziVoU5KNetJRAN-RtwYRXJOP10RheRE__dehvynLNG3i46NAhgdI6C0k8vzC2DrdRc5X5lUPbA5Y8jA7EE9BXTRsd5I_yR_S7UbdC" />
+            </div>
+            <span class="text-sm text-on-surface-variant font-medium ml-2">Mais de 10.000+ downloads</span>
+          </div> -->
+          <a class="group relative inline-flex items-center justify-center bg-surface-tint text-on-primary-container px-14 py-6 rounded-full font-title-md text-xl hover:scale-105 transition-all duration-300 font-bold glow-pulse"
+            href="#link de download">
+            <span
+              class="absolute inset-0 rounded-full ring-2 ring-surface-tint ring-offset-4 ring-offset-background opacity-0 group-hover:opacity-100 transition-opacity"></span>
+            <span class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-2xl">download</span>
+              Download Grátis
+            </span>
+          </a>
+          <div class="flex flex-col items-center gap-2">
+            <span class="font-mono-data text-sm text-on-surface-variant/70 tracking-wide mt-4">v2.0.0 • Windows 10/11 •
+              45MB</span>
+            <div class="flex gap-4 text-xs text-on-surface-variant/50">
+              <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">verified_user</span>
+                Seguro e verificado</span>
+              <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">update</span>
+                Atualizações gratuitas</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="w-full bg-surface-container-lowest py-12 border-t border-white/5 relative z-10">
+    <div
+      class="max-w-7xl mx-auto px-container-margin grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
+      <div class="flex flex-col gap-2"><img alt="Skytrack Logo"
+          class="h-6 w-fit object-contain mx-auto md:mx-0 opacity-80"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1J7naNo6hBpd2nKaBE-iHl-wWTESasHQMcDOvPC_eGsvIPuraVe10ekqQm0y_wVRd7RSTuYi8eX7e97fssIxd96kSIX1X60NUkYxi3XujXwZOnn0F-IGqiwhJqoJ1Nm4Dn-VlWIdVhjWT5qMsNrQ8PB3rAGTzl6C0g1fPBNBZYA4nOZy5XfHansIssZl1KiNxOeqhxnAsKaqHP5-edwSCMi3O96K4_THIFQhbgiuHeZvE-M_NYe6D" />
+        <p class="text-sm font-mono-data text-on-surface-variant/60">Sua central de voo avançada.</p>
+      </div>
+      <div class="flex justify-center gap-8"><a
+          class="text-on-surface-variant/70 hover:text-surface-tint transition-colors text-sm font-medium"
+          href="#">Termos</a><a
+          class="text-on-surface-variant/70 hover:text-surface-tint transition-colors text-sm font-medium"
+          href="#">Privacidade</a><a
+          class="text-on-surface-variant/70 hover:text-surface-tint transition-colors text-sm font-medium"
+          href="#">Suporte</a></div>
+      <div class="text-sm font-mono-data text-on-surface-variant/50 md:text-right">© 2026 SkyTrack.</div>
+    </div>
+  </footer>
+  <script>
+      (function () {
+        'use strict';
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var header = document.getElementById('main-header');
+        var navToggle = document.getElementById('nav-toggle');
+        var navMobile = document.getElementById('nav-mobile');
+
+        function onScroll() {
+          if (window.scrollY > 50) { header.classList.add('header-solid'); } else { header.classList.remove('header-solid'); }
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        if (navToggle) {
+          navToggle.addEventListener('click', function () {
+            var open = navMobile.classList.toggle('hidden');
+            navToggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+            var icon = navToggle.querySelector('.material-symbols-outlined');
+            if (icon) { icon.textContent = open ? 'menu' : 'close'; }
+          });
+          navMobile.querySelectorAll('a').forEach(function (a) {
+            a.addEventListener('click', function () {
+              navMobile.classList.add('hidden');
+              navToggle.setAttribute('aria-expanded', 'false');
+              var icon = navToggle.querySelector('.material-symbols-outlined');
+              if (icon) { icon.textContent = 'menu'; }
+            });
+          });
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+          a.addEventListener('click', function (e) {
+            var id = a.getAttribute('href');
+            if (id && id.length > 1) {
+              var target = document.querySelector(id);
+              if (target) {
+                e.preventDefault();
+                window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: reduceMotion ? 'auto' : 'smooth' });
+              }
+            }
+          });
+        });
+
+        var revealEls = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window && !reduceMotion) {
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                io.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+          revealEls.forEach(function (el) { io.observe(el); });
+        } else {
+          revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+        }
+
+        var dataPathLinks = document.querySelectorAll('[data-path]');
+        var sectionIds = Array.from(dataPathLinks).map(function (l) { return l.getAttribute('data-path'); }).filter(function (p) { return p && p !== 'download'; });
+        if ('IntersectionObserver' in window) {
+          var navIO = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                dataPathLinks.forEach(function (l) {
+                  l.classList.remove('text-primary', 'font-semibold');
+                  l.classList.add('text-on-surface-variant');
+                });
+                document.querySelectorAll('[data-path="' + entry.target.id + '"]').forEach(function (l) {
+                  l.classList.add('text-primary', 'font-semibold');
+                  l.classList.remove('text-on-surface-variant');
+                });
+              }
+            });
+          }, { rootMargin: '-45% 0px -55% 0px' });
+          sectionIds.forEach(function (id) { var s = document.getElementById(id); if (s) { navIO.observe(s); } });
+        }
+
+        function animateCount(el) {
+          var target = parseFloat(el.getAttribute('data-count'));
+          var pt = el.getAttribute('data-format') === 'pt';
+          var dur = 1600, start = null;
+          function fmt(v) { return pt ? v.toLocaleString('pt-BR') : String(v); }
+          function step(ts) {
+            if (!start) { start = ts; }
+            var p = Math.min((ts - start) / dur, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = fmt(Math.round(target * eased));
+            if (p < 1) { requestAnimationFrame(step); }
+          }
+          requestAnimationFrame(step);
+        }
+        var counters = document.querySelectorAll('[data-count]');
+        if ('IntersectionObserver' in window && !reduceMotion) {
+          var cio = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting && !entry.target.dataset.done) {
+                entry.target.dataset.done = '1';
+                animateCount(entry.target);
+                cio.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.6 });
+          counters.forEach(function (el) { cio.observe(el); });
+        } else {
+          counters.forEach(function (el) { el.textContent = el.getAttribute('data-format') === 'pt' ? parseFloat(el.getAttribute('data-count')).toLocaleString('pt-BR') : el.getAttribute('data-count'); });
+        }
+
+        var progressEls = document.querySelectorAll('.progress-fill');
+        if (progressEls.length && 'IntersectionObserver' in window) {
+          var pio = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                requestAnimationFrame(function () { entry.target.style.width = entry.target.getAttribute('data-progress') + '%'; });
+                pio.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.4 });
+          progressEls.forEach(function (el) { pio.observe(el); });
+        }
+
+        document.querySelectorAll('.spotlight-card').forEach(function (card) {
+          card.addEventListener('mousemove', function (e) {
+            var r = card.getBoundingClientRect();
+            card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+            card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+          });
+        });
+
+        var heroBg = document.getElementById('hero-bg');
+        if (heroBg && !reduceMotion) {
+          window.addEventListener('scroll', function () {
+            heroBg.style.transform = 'translateY(' + (window.scrollY * 0.3) + 'px) scale(1.15)';
+          }, { passive: true });
+        }
+
+        function openLightbox(src) {
+          var box = document.getElementById('lightbox');
+          if (box) {
+            document.getElementById('lightbox-img').src = src || '';
+            box.classList.remove('hidden');
+            box.classList.add('flex');
+          }
+        }
+        document.querySelectorAll('.gallery-item').forEach(function (item) {
+          var open = function () { openLightbox(item.getAttribute('data-src')); };
+          item.addEventListener('click', open);
+          item.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+          });
+        });
+
+        var lightbox = document.getElementById('lightbox');
+        if (lightbox) {
+          document.getElementById('lightbox-close').addEventListener('click', function () {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+          });
+          lightbox.addEventListener('click', function (e) {
+            if (e.target === lightbox) {
+              lightbox.classList.add('hidden');
+              lightbox.classList.remove('flex');
+            }
+          });
+          document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+              lightbox.classList.add('hidden');
+              lightbox.classList.remove('flex');
+            }
+          });
+        }
+      })();
+  </script>
+</body>
+
+</html>
