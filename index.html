@@ -13,6 +13,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet" />
   <style>
+    html { font-size: 16px; }
+    @media (max-width: 1360px) { html { font-size: 15px; } }
+    @media (max-width: 1280px), (max-height: 768px) { html { font-size: 14px; } }
+    @media (max-width: 1024px) { html { font-size: 14px; } }
+    @media (max-width: 640px) { html { font-size: 16px; } }
     @layer base {
 
       html,
@@ -283,13 +288,13 @@
           </div>
         </div>
         <div
-          class="relative z-10 px-container-margin max-w-7xl mx-auto flex flex-col items-center text-center gap-stack-lg">
+          class="relative z-10 px-container-margin max-w-6xl xl:max-w-7xl mx-auto flex flex-col items-center text-center gap-stack-lg">
           <div class="flex flex-col gap-6 items-center">
             <span
               class="px-4 py-1.5 rounded-full border border-surface-tint/30 bg-surface-tint/5 text-surface-tint font-label-caps text-label-caps tracking-[0.2em] backdrop-blur-sm reveal">O
               NOVO PADRÃO EM TELEMETRIA</span>
             <h1
-              class="font-display-lg text-5xl md:text-6xl text-primary max-w-4xl tracking-tight leading-[1.1] font-bold reveal stagger-1">
+              class="font-display-lg text-4xl md:text-5xl xl:text-6xl text-primary max-w-4xl tracking-tight leading-[1.1] font-bold reveal stagger-1">
               Skytrack: Eleve sua experiência de voo
             </h1>
             <p
@@ -299,7 +304,7 @@
             </p>
           </div>
           <div class="flex flex-wrap gap-4 justify-center reveal stagger-3">
-            <a class="mt-4 inline-flex items-center justify-center bg-surface-tint text-on-primary-container px-8 py-3 rounded-full font-title-md text-base hover:shadow-[0_0_30px_rgba(100,255,218,0.4)] hover:-translate-y-1 transition-all duration-300 font-semibold glow-pulse"
+            <a class="mt-4 inline-flex items-center justify-center bg-surface-tint text-on-primary-container px-6 xl:px-7 2xl:px-8 py-2.5 xl:py-3 2xl:py-3 rounded-full font-title-md text-sm xl:text-base hover:shadow-[0_0_30px_rgba(100,255,218,0.4)] hover:-translate-y-1 transition-all duration-300 font-semibold glow-pulse"
               href="#download">
               Comece Agora - É Grátis
             </a>
@@ -311,12 +316,12 @@
         </div>
       </section>
       <!-- Sobre Section -->
-      <section class="w-full py-16 bg-surface-container-lowest relative overflow-hidden" id="sobre">
+      <section class="w-full py-12 xl:py-14 2xl:py-16 bg-surface-container-lowest relative overflow-hidden" id="sobre">
         <div
           class="absolute top-0 right-0 w-[800px] h-[800px] bg-surface-tint/5 blur-[120px] rounded-full pointer-events-none">
         </div>
         <div
-          class="max-w-7xl mx-auto px-container-margin grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
+          class="max-w-6xl xl:max-w-7xl mx-auto px-container-margin grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-14 2xl:gap-20 items-center relative z-10">
           <div class="flex flex-col gap-8 relative items-center lg:items-start text-center lg:text-left">
             <div class="relative z-10">
               <h2 class="font-label-caps text-label-caps text-surface-tint uppercase tracking-[0.2em] mb-4">Visão Geral
@@ -340,7 +345,7 @@
                   <span class="font-mono-data text-mono-data text-on-surface">Dados em Tempo Real</span>
                 </div>
               </div>
-              <a class="inline-flex items-center justify-center bg-surface-tint text-on-primary-container px-8 py-3 rounded-full font-title-md text-base hover:shadow-[0_0_20px_rgba(100,255,218,0.4)] transition-all duration-300 font-semibold w-fit"
+              <a class="inline-flex items-center justify-center bg-surface-tint text-on-primary-container px-6 xl:px-7 2xl:px-8 py-2.5 xl:py-3 2xl:py-3 rounded-full font-title-md text-sm xl:text-base hover:shadow-[0_0_20px_rgba(100,255,218,0.4)] transition-all duration-300 font-semibold w-fit"
                 href="#funcionalidades">
                 Explorar Sistemas
               </a>
@@ -419,93 +424,93 @@
         </div>
       </section>
       <!-- Funcionalidades Grid -->
-      <section class="w-full py-16 bg-[whitesmoke] relative" id="funcionalidades">
+      <section class="w-full py-12 xl:py-14 2xl:py-16 bg-[whitesmoke] relative" id="funcionalidades">
         <div
           class="absolute top-1/2 left-0 w-[600px] h-[600px] bg-[#00695c]/10 blur-[120px] rounded-full pointer-events-none -translate-y-1/2 -translate-x-1/2">
         </div>
-        <div class="max-w-7xl mx-auto px-container-margin flex flex-col gap-20 relative z-10">
+        <div class="max-w-6xl xl:max-w-7xl mx-auto px-container-margin flex flex-col gap-10 xl:gap-14 2xl:gap-20 relative z-10">
           <div class="flex flex-col items-center text-center gap-4">
             <h2 class="font-label-caps text-label-caps text-[#00695c] uppercase tracking-[0.2em]">Sistemas de Bordo</h2>
-            <h3 class="font-headline-lg text-4xl md:text-5xl text-surface-container-lowest tracking-tight">
+            <h3 class="font-headline-lg text-3xl md:text-4xl xl:text-5xl text-surface-container-lowest tracking-tight">
               Funcionalidades Integradas</h3>
             <p class="font-body-lg text-xl text-[#4d5c5a] max-w-2xl mx-auto font-light">Tudo o que você precisa para uma
               operação de voo completa e profissional, em uma única interface.</p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 xl:gap-6 2xl:gap-8">
             <!-- Card 1 -->
             <div
-              class="reveal spotlight-card stagger-1 bg-white/70 backdrop-blur-lg hover:bg-white/90 transition-all duration-500 p-10 rounded-3xl border border-black/5 hover:border-[#00695c]/40 flex flex-col gap-6 group hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,105,92,0.12)]">
+              class="reveal spotlight-card stagger-1 bg-white/70 backdrop-blur-lg hover:bg-white/90 transition-all duration-500 p-6 xl:p-8 2xl:p-10 rounded-3xl border border-black/5 hover:border-[#00695c]/40 flex flex-col gap-4 xl:gap-5 2xl:gap-6 group hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,105,92,0.12)]">
               <div
                 class="w-14 h-14 rounded-2xl bg-[#00695c]/10 flex items-center justify-center text-[#00695c] group-hover:scale-110 transition-transform duration-500 group-hover:bg-[#00695c] group-hover:text-white">
                 <span class="material-symbols-outlined text-3xl">explore</span>
               </div>
               <div class="flex flex-col gap-3">
-                <h4 class="font-title-md text-2xl text-surface-container-lowest">Tracking &amp; Telemetria</h4>
+                <h4 class="font-title-md text-xl xl:text-2xl text-surface-container-lowest">Tracking &amp; Telemetria</h4>
                 <p class="font-body-lg text-[#4d5c5a] leading-relaxed">Monitoramento em tempo real de altitude,
                   velocidade e sistemas da aeronave.</p>
               </div>
             </div>
             <!-- Card 2 -->
             <div
-              class="reveal spotlight-card stagger-2 bg-white/70 backdrop-blur-lg hover:bg-white/90 transition-all duration-500 p-10 rounded-3xl border border-black/5 hover:border-[#00695c]/40 flex flex-col gap-6 group hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,105,92,0.12)]">
+              class="reveal spotlight-card stagger-2 bg-white/70 backdrop-blur-lg hover:bg-white/90 transition-all duration-500 p-6 xl:p-8 2xl:p-10 rounded-3xl border border-black/5 hover:border-[#00695c]/40 flex flex-col gap-4 xl:gap-5 2xl:gap-6 group hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,105,92,0.12)]">
               <div
                 class="w-14 h-14 rounded-2xl bg-[#00695c]/10 flex items-center justify-center text-[#00695c] group-hover:scale-110 transition-transform duration-500 group-hover:bg-[#00695c] group-hover:text-white">
                 <span class="material-symbols-outlined text-3xl">flight_takeoff</span>
               </div>
               <div class="flex flex-col gap-3">
-                <h4 class="font-title-md text-2xl text-surface-container-lowest">Integração Simbrief</h4>
+                <h4 class="font-title-md text-xl xl:text-2xl text-surface-container-lowest">Integração Simbrief</h4>
                 <p class="font-body-lg text-[#4d5c5a] leading-relaxed">Importação instantânea de planos de voo, pesos e
                   balanceamento diretamente do seu despacho.</p>
               </div>
             </div>
             <!-- Card 3 -->
             <div
-              class="reveal spotlight-card stagger-3 bg-white/70 backdrop-blur-lg hover:bg-white/90 transition-all duration-500 p-10 rounded-3xl border border-black/5 hover:border-[#00695c]/40 flex flex-col gap-6 group hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,105,92,0.12)]">
+              class="reveal spotlight-card stagger-3 bg-white/70 backdrop-blur-lg hover:bg-white/90 transition-all duration-500 p-6 xl:p-8 2xl:p-10 rounded-3xl border border-black/5 hover:border-[#00695c]/40 flex flex-col gap-4 xl:gap-5 2xl:gap-6 group hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,105,92,0.12)]">
               <div
                 class="w-14 h-14 rounded-2xl bg-[#00695c]/10 flex items-center justify-center text-[#00695c] group-hover:scale-110 transition-transform duration-500 group-hover:bg-[#00695c] group-hover:text-white">
                 <span class="material-symbols-outlined text-3xl">layers</span>
               </div>
               <div class="flex flex-col gap-3">
-                <h4 class="font-title-md text-2xl text-surface-container-lowest">Mapa em Camadas</h4>
+                <h4 class="font-title-md text-xl xl:text-2xl text-surface-container-lowest">Mapa em Camadas</h4>
                 <p class="font-body-lg text-[#4d5c5a] leading-relaxed">Visualização de rota com sobreposição de dados
                   meteorológicos.</p>
               </div>
             </div>
             <!-- Card 4 -->
             <div
-              class="reveal spotlight-card stagger-4 bg-white/70 backdrop-blur-lg hover:bg-white/90 transition-all duration-500 p-10 rounded-3xl border border-black/5 hover:border-[#00695c]/40 flex flex-col gap-6 group hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,105,92,0.12)]">
+              class="reveal spotlight-card stagger-4 bg-white/70 backdrop-blur-lg hover:bg-white/90 transition-all duration-500 p-6 xl:p-8 2xl:p-10 rounded-3xl border border-black/5 hover:border-[#00695c]/40 flex flex-col gap-4 xl:gap-5 2xl:gap-6 group hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,105,92,0.12)]">
               <div
                 class="w-14 h-14 rounded-2xl bg-[#00695c]/10 flex items-center justify-center text-[#00695c] group-hover:scale-110 transition-transform duration-500 group-hover:bg-[#00695c] group-hover:text-white">
                 <span class="material-symbols-outlined text-3xl">headset_mic</span>
               </div>
               <div class="flex flex-col gap-3">
-                <h4 class="font-title-md text-2xl text-surface-container-lowest">Áudio de Cabine</h4>
+                <h4 class="font-title-md text-xl xl:text-2xl text-surface-container-lowest">Áudio de Cabine</h4>
                 <p class="font-body-lg text-[#4d5c5a] leading-relaxed">Integração com addons de áudio para imersão total
                   nos anúncios da tripulação.</p>
               </div>
             </div>
             <!-- Card 5 -->
             <div
-              class="reveal spotlight-card stagger-5 bg-white/70 backdrop-blur-lg hover:bg-white/90 transition-all duration-500 p-10 rounded-3xl border border-black/5 hover:border-[#00695c]/40 flex flex-col gap-6 group hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,105,92,0.12)]">
+              class="reveal spotlight-card stagger-5 bg-white/70 backdrop-blur-lg hover:bg-white/90 transition-all duration-500 p-6 xl:p-8 2xl:p-10 rounded-3xl border border-black/5 hover:border-[#00695c]/40 flex flex-col gap-4 xl:gap-5 2xl:gap-6 group hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,105,92,0.12)]">
               <div
                 class="w-14 h-14 rounded-2xl bg-[#00695c]/10 flex items-center justify-center text-[#00695c] group-hover:scale-110 transition-transform duration-500 group-hover:bg-[#00695c] group-hover:text-white">
                 <span class="material-symbols-outlined text-3xl">air</span>
               </div>
               <div class="flex flex-col gap-3">
-                <h4 class="font-title-md text-2xl text-surface-container-lowest">METAR ao Vivo</h4>
+                <h4 class="font-title-md text-xl xl:text-2xl text-surface-container-lowest">METAR ao Vivo</h4>
                 <p class="font-body-lg text-[#4d5c5a] leading-relaxed">Condições climáticas atualizadas via chave API
                   AVWX para precisão meteorológica.</p>
               </div>
             </div>
             <!-- Card 6 -->
             <div
-              class="reveal spotlight-card stagger-6 bg-white/70 backdrop-blur-lg hover:bg-white/90 transition-all duration-500 p-10 rounded-3xl border border-black/5 hover:border-[#00695c]/40 flex flex-col gap-6 group hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,105,92,0.12)]">
+              class="reveal spotlight-card stagger-6 bg-white/70 backdrop-blur-lg hover:bg-white/90 transition-all duration-500 p-6 xl:p-8 2xl:p-10 rounded-3xl border border-black/5 hover:border-[#00695c]/40 flex flex-col gap-4 xl:gap-5 2xl:gap-6 group hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,105,92,0.12)]">
               <div
                 class="w-14 h-14 rounded-2xl bg-[#00695c]/10 flex items-center justify-center text-[#00695c] group-hover:scale-110 transition-transform duration-500 group-hover:bg-[#00695c] group-hover:text-white">
                 <span class="material-symbols-outlined text-3xl">webhook</span>
               </div>
               <div class="flex flex-col gap-3">
-                <h4 class="font-title-md text-2xl text-surface-container-lowest">Integração Discord</h4>
+                <h4 class="font-title-md text-xl xl:text-2xl text-surface-container-lowest">Integração Discord</h4>
                 <p class="font-body-lg text-[#4d5c5a] leading-relaxed">Webhooks automatizados para relatar etapas do voo
                   e o debriefing final na sua comunidade.</p>
               </div>
@@ -535,7 +540,7 @@
             </div>
           </div>
           <div class="flex justify-center mt-8">
-            <a class="inline-flex items-center justify-center bg-surface-tint text-on-primary-container px-8 py-3 rounded-full font-title-md text-base hover:shadow-[0_0_20px_rgba(100,255,218,0.4)] transition-all duration-300 font-semibold"
+            <a class="inline-flex items-center justify-center bg-surface-tint text-on-primary-container px-6 xl:px-7 2xl:px-8 py-2.5 xl:py-3 2xl:py-3 rounded-full font-title-md text-sm xl:text-base hover:shadow-[0_0_20px_rgba(100,255,218,0.4)] transition-all duration-300 font-semibold"
               href="#diferenciais">
               Ver Detalhes Técnicos
             </a>
@@ -543,13 +548,13 @@
         </div>
       </section>
       <!-- Stats Section -->
-      <section class="w-full py-24 bg-background relative" id="stats">
-        <div class="max-w-7xl mx-auto px-container-margin grid grid-cols-2 lg:grid-cols-4 gap-6">
+      <section class="w-full py-16 xl:py-20 2xl:py-24 bg-background relative" id="stats">
+        <div class="max-w-6xl xl:max-w-7xl mx-auto px-container-margin grid grid-cols-2 lg:grid-cols-4 gap-4 xl:gap-5 2xl:gap-6">
           <div
             class="reveal stagger-1 spotlight-card bg-surface-container/30 backdrop-blur-lg border border-white/5 hover:border-surface-tint/30 rounded-3xl p-8 flex flex-col items-center gap-3 text-center transition-all duration-300 hover:-translate-y-1">
             <span class="material-symbols-outlined text-3xl text-surface-tint">download</span>
             <div class="flex items-baseline gap-1">
-              <span class="font-display-lg text-4xl md:text-5xl text-primary font-bold" data-count="10000"
+              <span class="font-display-lg text-3xl xl:text-4xl 2xl:text-5xl text-primary font-bold" data-count="10000"
                 data-format="pt">0</span>
               <span class="text-surface-tint text-3xl">+</span>
             </div>
@@ -560,7 +565,7 @@
             class="reveal stagger-2 spotlight-card bg-surface-container/30 backdrop-blur-lg border border-white/5 hover:border-surface-tint/30 rounded-3xl p-8 flex flex-col items-center gap-3 text-center transition-all duration-300 hover:-translate-y-1">
             <span class="material-symbols-outlined text-3xl text-surface-tint">rocket_launch</span>
             <div class="flex items-baseline gap-1">
-              <span class="font-display-lg text-4xl md:text-5xl text-primary font-bold" data-count="2"
+              <span class="font-display-lg text-3xl xl:text-4xl 2xl:text-5xl text-primary font-bold" data-count="2"
                 data-format="none">0</span>
             </div>
             <span
@@ -570,7 +575,7 @@
             class="reveal stagger-3 spotlight-card bg-surface-container/30 backdrop-blur-lg border border-white/5 hover:border-surface-tint/30 rounded-3xl p-8 flex flex-col items-center gap-3 text-center transition-all duration-300 hover:-translate-y-1">
             <span class="material-symbols-outlined text-3xl text-surface-tint">memory</span>
             <div class="flex items-baseline gap-1">
-              <span class="font-display-lg text-4xl md:text-5xl text-primary font-bold" data-count="45"
+              <span class="font-display-lg text-3xl xl:text-4xl 2xl:text-5xl text-primary font-bold" data-count="45"
                 data-format="none">0</span>
               <span class="text-surface-tint text-3xl">MB</span>
             </div>
@@ -581,7 +586,7 @@
             class="reveal stagger-4 spotlight-card bg-surface-container/30 backdrop-blur-lg border border-white/5 hover:border-surface-tint/30 rounded-3xl p-8 flex flex-col items-center gap-3 text-center transition-all duration-300 hover:-translate-y-1">
             <span class="material-symbols-outlined text-3xl text-surface-tint">monitor_heart</span>
             <div class="flex items-baseline gap-1">
-              <span class="font-display-lg text-4xl md:text-5xl text-primary font-bold" data-count="24"
+              <span class="font-display-lg text-3xl xl:text-4xl 2xl:text-5xl text-primary font-bold" data-count="24"
                 data-format="none">0</span>
               <span class="text-surface-tint text-3xl">/7</span>
             </div>
@@ -591,14 +596,14 @@
         </div>
       </section>
       <!-- Diferenciais Section -->
-      <section class="w-full py-16 bg-surface-container-lowest overflow-hidden relative" id="diferenciais">
+      <section class="w-full py-12 xl:py-14 2xl:py-16 bg-surface-container-lowest overflow-hidden relative" id="diferenciais">
         <div
-          class="max-w-7xl mx-auto px-container-margin grid grid-cols-1 lg:grid-cols-12 gap-20 items-center relative z-10">
+          class="max-w-6xl xl:max-w-7xl mx-auto px-container-margin grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-14 2xl:gap-20 items-center relative z-10">
           <div class="lg:col-span-5 flex flex-col gap-10 items-center lg:items-start text-center lg:text-left">
             <div>
               <h2 class="font-label-caps text-label-caps text-surface-tint uppercase tracking-[0.2em] mb-4">Diferenciais
               </h2>
-              <h3 class="font-headline-lg text-4xl text-primary leading-tight">Instrumentação de Precisão</h3>
+              <h3 class="font-headline-lg text-3xl xl:text-4xl text-primary leading-tight">Instrumentação de Precisão</h3>
             </div>
             <p class="font-body-lg text-lg text-on-surface-variant leading-relaxed">
               Desenhado para não interferir na performance do simulador. O Skytrack roda de forma leve em segundo plano,
@@ -623,7 +628,7 @@
                   garantindo FPS estáveis.</p>
               </div>
             </div>
-            <a class="mt-4 inline-flex items-center justify-center bg-surface-tint text-on-primary-container px-8 py-3 rounded-full font-title-md text-base hover:shadow-[0_0_20px_rgba(100,255,218,0.4)] transition-all duration-300 font-semibold w-fit"
+            <a class="mt-4 inline-flex items-center justify-center bg-surface-tint text-on-primary-container px-6 xl:px-7 2xl:px-8 py-2.5 xl:py-3 2xl:py-3 rounded-full font-title-md text-sm xl:text-base hover:shadow-[0_0_20px_rgba(100,255,218,0.4)] transition-all duration-300 font-semibold w-fit"
               href="#download">
               Baixar para Windows
             </a>
@@ -640,19 +645,19 @@
         </div>
       </section>
       <!-- Comunidade & Parceria Section -->
-      <section class="w-full py-16 bg-background relative overflow-hidden" id="comunidade">
+      <section class="w-full py-12 xl:py-14 2xl:py-16 bg-background relative overflow-hidden" id="comunidade">
         <div
           class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-surface-tint/5 via-background to-background z-0">
         </div>
-        <div class="max-w-7xl mx-auto px-container-margin relative z-10">
+        <div class="max-w-6xl xl:max-w-7xl mx-auto px-container-margin relative z-10">
           <div class="flex flex-col items-center text-center gap-4 mb-20">
             <h2 class="font-label-caps text-label-caps text-surface-tint uppercase tracking-[0.2em]">Comunidade &amp;
               Parceria</h2>
-            <h3 class="font-headline-lg text-4xl md:text-5xl text-primary tracking-tight">Voe Acompanhado</h3>
-            <p class="font-body-lg text-xl text-on-surface-variant max-w-2xl mx-auto font-light">Junte-se a milhares de
+            <h3 class="font-headline-lg text-3xl md:text-4xl xl:text-5xl text-primary tracking-tight">Voe Acompanhado</h3>
+            <p class="font-body-lg text-lg xl:text-xl text-on-surface-variant max-w-2xl mx-auto font-light">Junte-se a milhares de
               pilotos virtuais. Compartilhe conhecimentos, rotas e a paixão pela aviação.</p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 xl:gap-6 2xl:gap-8">
             <!-- Virtual Alliance -->
             <div
               class="bg-surface-container/30 backdrop-blur-xl p-8 rounded-[2rem] border border-white/10 flex flex-col gap-4 relative overflow-hidden group hover:border-surface-tint/30 transition-colors duration-500">
@@ -664,7 +669,7 @@
                 <span class="material-symbols-outlined text-2xl">public</span>
               </div>
               <div class="z-10 flex flex-col gap-2">
-                <h4 class="font-title-md text-2xl text-primary">Virtual Alliance</h4>
+                <h4 class="font-title-md text-xl xl:text-2xl text-primary">Virtual Alliance</h4>
                 <p class="font-body-lg text-on-surface-variant leading-relaxed">Nosso parceiro oficial. A comunidade
                   definitiva para pilotos virtuais que buscam um ambiente estruturado, realista e colaborativo para
                   elevar sua simulação ao nível aéreo.</p>
@@ -692,7 +697,7 @@
                 </svg>
               </div>
               <div class="z-10 flex flex-col gap-2">
-                <h4 class="font-title-md text-2xl text-primary">Servidor Discord</h4>
+                <h4 class="font-title-md text-xl xl:text-2xl text-primary">Servidor Discord</h4>
                 <p class="font-body-lg text-on-surface-variant leading-relaxed">O centro de comando da nossa comunidade.
                   Obtenha suporte em tempo real, compartilhe relatórios de voo e conecte-se com outros entusiastas da
                   aviação.</p>
@@ -715,7 +720,7 @@
                 <span class="material-symbols-outlined text-2xl">groups</span>
               </div>
               <div class="z-10 flex flex-col gap-2">
-                <h4 class="font-title-md text-2xl text-primary">Comunidade Fluxer</h4>
+                <h4 class="font-title-md text-xl xl:text-2xl text-primary">Comunidade Fluxer</h4>
                 <p class="font-body-lg text-on-surface-variant leading-relaxed">Nossa presença no Fluxer. Acompanhe as
                   novidades, participe das conversas e conecte-se com outros pilotos em um só lugar.</p>
               </div>
@@ -730,20 +735,20 @@
         </div>
       </section>
       <!-- Jogos Suportados -->
-      <section class="w-full py-16 bg-surface-container-lowest" id="jogos-suportados">
+      <section class="w-full py-12 xl:py-14 2xl:py-16 bg-surface-container-lowest" id="jogos-suportados">
         <div class="max-w-5xl mx-auto px-container-margin text-center flex flex-col items-center gap-16">
           <div class="flex flex-col gap-4">
             <h2 class="font-label-caps text-label-caps text-surface-tint uppercase tracking-[0.2em]">Compatibilidade
             </h2>
-            <h3 class="font-headline-lg text-4xl text-primary">Preparado para decolagem?</h3>
+            <h3 class="font-headline-lg text-3xl xl:text-4xl text-primary">Preparado para decolagem?</h3>
             <p class="font-body-lg text-xl text-on-surface-variant max-w-2xl mx-auto font-light">Integração perfeita com
               as principais plataformas de simulação do mercado. Voe sem limites!</p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 xl:gap-6 2xl:gap-8 w-full">
             <div
               class="bg-surface-container/30 backdrop-blur-md p-10 rounded-3xl border border-white/5 flex flex-col items-center justify-center gap-6 hover:border-surface-tint/30 transition-all duration-300 hover:bg-surface-container/50">
               <span class="material-symbols-outlined text-5xl text-surface-tint relative z-10">flight</span>
-              <h4 class="font-title-md text-2xl text-primary text-center">Microsoft Flight Simulator 2020</h4>
+              <h4 class="font-title-md text-xl xl:text-2xl text-primary text-center">Microsoft Flight Simulator 2020</h4>
               <span
                 class="px-4 py-1.5 bg-surface-tint/10 border border-surface-tint/20 text-surface-tint font-mono-data text-xs tracking-widest font-bold rounded-full">SUPORTE
                 TOTAL</span>
@@ -761,7 +766,7 @@
             </div>
           </div>
           <div class="flex justify-center mt-4">
-            <a class="inline-flex items-center justify-center bg-surface-tint text-on-primary-container px-8 py-3 rounded-full font-title-md text-base hover:shadow-[0_0_20px_rgba(100,255,218,0.4)] transition-all duration-300 font-semibold"
+            <a class="inline-flex items-center justify-center bg-surface-tint text-on-primary-container px-6 xl:px-7 2xl:px-8 py-2.5 xl:py-3 2xl:py-3 rounded-full font-title-md text-sm xl:text-base hover:shadow-[0_0_20px_rgba(100,255,218,0.4)] transition-all duration-300 font-semibold"
               href="#download">
               Inicie sua Jornada
             </a>
@@ -769,16 +774,16 @@
         </div>
       </section>
       <!-- Galeria Section -->
-      <section class="w-full py-16 bg-[whitesmoke] relative overflow-hidden" id="galeria">
+      <section class="w-full py-12 xl:py-14 2xl:py-16 bg-[whitesmoke] relative overflow-hidden" id="galeria">
         <div class="max-w-6xl mx-auto px-container-margin relative z-10 flex flex-col gap-14">
           <div class="flex flex-col items-center text-center gap-4 reveal">
             <h2 class="font-label-caps text-label-caps text-[#00695c] uppercase tracking-[0.2em]">Capturas de Tela</h2>
-            <h3 class="font-headline-lg text-4xl md:text-5xl text-surface-container-lowest tracking-tight">Veja o
+            <h3 class="font-headline-lg text-3xl md:text-4xl xl:text-5xl text-surface-container-lowest tracking-tight">Veja o
               Skytrack em ação</h3>
             <p class="font-body-lg text-xl text-[#4d5c5a] max-w-2xl mx-auto font-light">Uma prévia da interface de
               comandos projetada para simular instrumentos reais de aeronave.</p>
           </div>
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-5 lg:auto-rows-[190px] auto-rows-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-5 lg:auto-rows-[160px] xl:auto-rows-[175px] 2xl:auto-rows-[190px] auto-rows-auto">
             <div
               class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-full reveal stagger-1 lg:col-start-1 lg:row-start-3"
               data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuASSXAf3l4ybBA-bZtAT84Y3kHwNK4hkwkJ3rtlCy5gjxrtqtu6mcCCUBHYmaWnaUVXSV5RODpRO9vZJ6SYcFZG5TgG76OwPxRAqAP6wqM_gyz-l7sYrjgWqY7LslihPKgZX0di-8Ef4LMJemRx8f5LS5vJR7TyvN9WcD7IXeqHZjUwTPCxtWfcK_zRXxnhDr3Z89pTIrrN7tsmJ31SHEcBMnXjx7KoQanwcRs3Jon97u_5YjVyVDgP"
@@ -813,10 +818,10 @@
             </div>
             <div
               class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-full reveal stagger-3 lg:col-start-2 lg:row-start-3"
-              data-src="./metar_ao_vivo.webp" role="button" tabindex="0">
+              data-src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787326690/IMG_1587_dtoviz.png" role="button" tabindex="0">
               <img alt="Screenshot METAR ao Vivo"
                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                src="./metar_ao_vivo.webp" />
+                src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787326690/IMG_1587_dtoviz.png" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               <div
                 class="absolute bottom-3 left-3 bg-black/55 backdrop-blur-md rounded-lg px-3 py-1.5 font-mono-data text-xs text-surface-tint">
@@ -957,12 +962,12 @@
           para zoom 2× • Arraste para mover • Scroll para zoom</span>
       </div>
       <!-- FAQ Section -->
-      <section class="w-full py-16 bg-background relative overflow-hidden" id="faq">
+      <section class="w-full py-12 xl:py-14 2xl:py-16 bg-background relative overflow-hidden" id="faq">
         <div class="max-w-4xl mx-auto px-container-margin relative z-10">
           <div class="flex flex-col items-center text-center gap-4 mb-16">
             <h2 class="font-label-caps text-label-caps text-surface-tint uppercase tracking-[0.2em]">Perguntas
               Frequentes</h2>
-            <h3 class="font-headline-lg text-4xl text-primary tracking-tight">Tire suas dúvidas</h3>
+            <h3 class="font-headline-lg text-3xl xl:text-4xl text-primary tracking-tight">Tire suas dúvidas</h3>
           </div>
           <div class="flex flex-col gap-4">
             <details
@@ -1050,7 +1055,7 @@
         </div>
       </section>
       <!-- Download Section -->
-      <section class="w-full py-24 relative overflow-hidden" id="download">
+      <section class="w-full min-h-[100vh] flex items-center justify-center py-16 xl:py-20 2xl:py-24 relative overflow-hidden" id="download">
         <div class="absolute inset-0 z-0">
           <img alt="Flight Simulator Background"
             class="w-full h-full object-cover" src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787323866/FlightSimulator2024_2026-07-19_09-29-36_863_1_wspybs.png" />
@@ -1060,18 +1065,18 @@
             class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-surface-tint/5 blur-[120px] rounded-full pointer-events-none">
           </div>
         </div>
-        <div class="max-w-4xl mx-auto px-container-margin relative z-10 text-center flex flex-col items-center gap-10">
+        <div class="max-w-4xl mx-auto px-container-margin relative z-10 text-center flex flex-col items-center gap-6 xl:gap-8 2xl:gap-10">
           <div
-            class="w-full bg-surface-container/30 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 md:p-12 flex flex-col items-center gap-10 shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
+            class="w-full bg-surface-container/30 backdrop-blur-xl border border-white/10 rounded-[2rem] p-6 xl:p-8 2xl:p-12 flex flex-col items-center gap-6 xl:gap-8 2xl:gap-10 shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
           <div class="flex flex-col gap-6 items-center">
             <span
               class="px-4 py-1.5 rounded-full border border-surface-tint/30 bg-surface-tint/5 text-surface-tint font-label-caps text-label-caps tracking-[0.2em] backdrop-blur-sm">FAÇA
               O DOWNLOAD AGORA E APROVEITE</span>
-            <h2 class="font-display-lg text-5xl md:text-6xl text-primary leading-[1.1] font-bold tracking-tight">
+            <h2 class="font-display-lg text-4xl md:text-5xl xl:text-6xl text-primary leading-[1.1] font-bold tracking-tight">
               A evolução do seu <br />
               <span class="text-surface-tint">cockpit digital.</span>
             </h2>
-            <p class="font-body-lg text-xl text-on-surface-variant max-w-2xl font-light">
+            <p class="font-body-lg text-lg xl:text-xl text-on-surface-variant max-w-2xl font-light">
               Eleve o realismo dos seus voos hoje. Baixe o Skytrack gratuitamente e junte-se à comunidade de pilotos
               virtuais que já transformaram sua simulação.
             </p>
@@ -1089,7 +1094,7 @@
             </div>
             <span class="text-sm text-on-surface-variant font-medium ml-2">Mais de 10.000+ downloads</span>
           </div> -->
-          <a class="pointer-events-none group relative inline-flex items-center justify-center bg-surface-tint text-on-primary-container px-14 py-6 rounded-full font-title-md text-xl hover:scale-105 transition-all duration-300 font-bold glow-pulse"
+          <a class="pointer-events-none group relative inline-flex items-center justify-center bg-surface-tint text-on-primary-container px-8 xl:px-10 2xl:px-14 py-4 xl:py-5 2xl:py-6 rounded-full font-title-md text-lg xl:text-xl hover:scale-105 transition-all duration-300 font-bold glow-pulse"
             href="#link de download">
             <span
               class="absolute inset-0 rounded-full ring-2 ring-surface-tint ring-offset-4 ring-offset-background opacity-0 group-hover:opacity-100 transition-opacity"></span>
@@ -1115,7 +1120,7 @@
   </main>
   <footer class="w-full bg-surface-container-lowest py-4 border-t border-white/5 relative z-10">
     <div
-      class="max-w-7xl mx-auto px-container-margin grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
+      class="max-w-6xl xl:max-w-7xl mx-auto px-container-margin grid grid-cols-1 md:grid-cols-3 gap-5 xl:gap-6 2xl:gap-8 items-center text-center md:text-left">
       <div class="flex flex-col gap-2">
         <!-- <img alt="Skytrack Logo"
           class="h-6 w-fit object-contain mx-auto md:mx-0 opacity-80"
