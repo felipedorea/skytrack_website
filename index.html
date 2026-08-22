@@ -39,8 +39,27 @@
       }
     }
 
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(100, 255, 218, 0.35) transparent;
+    }
     ::-webkit-scrollbar {
-      display: none;
+      width: 6px;
+      height: 6px;
+      background: transparent;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(100, 255, 218, 0.35);
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(100, 255, 218, 0.6);
+    }
+    ::-webkit-scrollbar-corner {
+      background: transparent;
     }
 
     .glass-header {
@@ -254,7 +273,7 @@
             class="material-symbols-outlined text-3xl">menu</span></button></div>
     </div>
     <nav
-      class="lg:hidden hidden absolute top-16 left-0 right-0 flex flex-col gap-1 bg-surface-container/95 backdrop-blur-2xl border-b border-white/10 px-6 py-6 shadow-2xl z-40"
+      class="lg:hidden absolute top-16 left-0 right-0 flex flex-col gap-1 bg-surface-container/95 backdrop-blur-2xl border-b border-white/10 px-6 py-6 shadow-2xl z-40 opacity-0 -translate-y-3 pointer-events-none transition-all duration-500 ease-[cubic-bezier(.16,1,.3,1)]"
       id="nav-mobile" data-active-classes="text-surface-tint font-semibold"><a
         class="rounded-xl px-4 py-3 font-label-caps text-label-caps text-on-surface-variant hover:text-surface-tint hover:bg-surface-container-high uppercase tracking-wider transition-colors"
         data-path="sobre" href="#sobre">Visão Geral</a><a
@@ -784,23 +803,7 @@
           </div>
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-5 lg:auto-rows-[160px] xl:auto-rows-[175px] 2xl:auto-rows-[190px] auto-rows-auto">
             <div
-              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-full reveal stagger-1 lg:col-start-1 lg:row-start-3"
-              data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuASSXAf3l4ybBA-bZtAT84Y3kHwNK4hkwkJ3rtlCy5gjxrtqtu6mcCCUBHYmaWnaUVXSV5RODpRO9vZJ6SYcFZG5TgG76OwPxRAqAP6wqM_gyz-l7sYrjgWqY7LslihPKgZX0di-8Ef4LMJemRx8f5LS5vJR7TyvN9WcD7IXeqHZjUwTPCxtWfcK_zRXxnhDr3Z89pTIrrN7tsmJ31SHEcBMnXjx7KoQanwcRs3Jon97u_5YjVyVDgP"
-              role="button" tabindex="0">
-              <img alt="Screenshot Dashboard de Telemetria"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuASSXAf3l4ybBA-bZtAT84Y3kHwNK4hkwkJ3rtlCy5gjxrtqtu6mcCCUBHYmaWnaUVXSV5RODpRO9vZJ6SYcFZG5TgG76OwPxRAqAP6wqM_gyz-l7sYrjgWqY7LslihPKgZX0di-8Ef4LMJemRx8f5LS5vJR7TyvN9WcD7IXeqHZjUwTPCxtWfcK_zRXxnhDr3Z89pTIrrN7tsmJ31SHEcBMnXjx7KoQanwcRs3Jon97u_5YjVyVDgP" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-              <div
-                class="absolute bottom-3 left-3 bg-black/55 backdrop-blur-md rounded-lg px-3 py-1.5 font-mono-data text-xs text-surface-tint">
-                DASHBOARD DE TELEMETRIA</div>
-              <div
-                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <span class="material-symbols-outlined text-white/90 text-4xl">zoom_in</span>
-              </div>
-            </div>
-            <div
-              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-full reveal stagger-2 lg:col-start-1 lg:row-start-1 lg:col-span-2 lg:row-span-2"
+              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-full reveal stagger-1 lg:col-start-1 lg:row-start-1 lg:col-span-2 lg:row-span-2"
               data-src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787312264/mapas_skytrack_m9dgfk.png"
               role="button" tabindex="0">
               <img alt="Screenshot Mapa em Camadas"
@@ -815,55 +818,8 @@
                 <span class="material-symbols-outlined text-white/90 text-4xl">zoom_in</span>
               </div>
             </div>
-            <div
-              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-full reveal stagger-3 lg:col-start-2 lg:row-start-3"
-              data-src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787326690/IMG_1587_dtoviz.png" role="button" tabindex="0">
-              <img alt="Screenshot METAR ao Vivo"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787326690/IMG_1587_dtoviz.png" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <div
-                class="absolute bottom-3 left-3 bg-black/55 backdrop-blur-md rounded-lg px-3 py-1.5 font-mono-data text-xs text-surface-tint">
-                METAR AO VIVO</div>
-              <div
-                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <span class="material-symbols-outlined text-white/90 text-4xl">zoom_in</span>
-              </div>
-            </div>
-            <div
-              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-full reveal stagger-4 lg:col-start-1 lg:row-start-4 lg:col-span-2"
-              data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuASSXAf3l4ybBA-bZtAT84Y3kHwNK4hkwkJ3rtlCy5gjxrtqtu6mcCCUBHYmaWnaUVXSV5RODpRO9vZJ6SYcFZG5TgG76OwPxRAqAP6wqM_gyz-l7sYrjgWqY7LslihPKgZX0di-8Ef4LMJemRx8f5LS5vJR7TyvN9WcD7IXeqHZjUwTPCxtWfcK_zRXxnhDr3Z89pTIrrN7tsmJ31SHEcBMnXjx7KoQanwcRs3Jon97u_5YjVyVDgP"
-              role="button" tabindex="0">
-              <img alt="Screenshot Planejamento de Rota"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuASSXAf3l4ybBA-bZtAT84Y3kHwNK4hkwkJ3rtlCy5gjxrtqtu6mcCCUBHYmaWnaUVXSV5RODpRO9vZJ6SYcFZG5TgG76OwPxRAqAP6wqM_gyz-l7sYrjgWqY7LslihPKgZX0di-8Ef4LMJemRx8f5LS5vJR7TyvN9WcD7IXeqHZjUwTPCxtWfcK_zRXxnhDr3Z89pTIrrN7tsmJ31SHEcBMnXjx7KoQanwcRs3Jon97u_5YjVyVDgP" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-              <div
-                class="absolute bottom-3 left-3 bg-black/55 backdrop-blur-md rounded-lg px-3 py-1.5 font-mono-data text-xs text-surface-tint">
-                ROTA</div>
-              <div
-                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <span class="material-symbols-outlined text-white/90 text-4xl">zoom_in</span>
-              </div>
-            </div>
-            <div
-              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-full reveal stagger-5 lg:col-start-3 lg:row-start-5"
-              data-src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787319941/card_audio_ampliado_ayb7i8.jpg"
-              role="button" tabindex="0">
-              <img alt="Screenshot Áudio de Cabine"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787317871/CARD_%C3%81UDIO_DE_CABINE_mhcbfg.png" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <div
-                class="absolute bottom-3 left-3 bg-black/55 backdrop-blur-md rounded-lg px-3 py-1.5 font-mono-data text-xs text-surface-tint">
-                ÁUDIO DE CABINE</div>
-              <div
-                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <span class="material-symbols-outlined text-white/90 text-4xl">zoom_in</span>
-              </div>
-            </div>
-            <div
-              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-full reveal stagger-6 lg:col-start-3 lg:row-start-1 lg:row-span-2"
+<div
+              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-full reveal stagger-2 lg:col-start-3 lg:row-start-1 lg:row-span-2"
               data-src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787321288/CHECKLIST_eymrca.png"
               role="button" tabindex="0">
               <img alt="Screenshot Checklists Interativos"
@@ -878,7 +834,70 @@
                 <span class="material-symbols-outlined text-white/90 text-4xl">zoom_in</span>
               </div>
             </div>
-            <div
+<div
+              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-full reveal stagger-3 lg:col-start-1 lg:row-start-3"
+              data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuASSXAf3l4ybBA-bZtAT84Y3kHwNK4hkwkJ3rtlCy5gjxrtqtu6mcCCUBHYmaWnaUVXSV5RODpRO9vZJ6SYcFZG5TgG76OwPxRAqAP6wqM_gyz-l7sYrjgWqY7LslihPKgZX0di-8Ef4LMJemRx8f5LS5vJR7TyvN9WcD7IXeqHZjUwTPCxtWfcK_zRXxnhDr3Z89pTIrrN7tsmJ31SHEcBMnXjx7KoQanwcRs3Jon97u_5YjVyVDgP"
+              role="button" tabindex="0">
+              <img alt="Screenshot Dashboard de Telemetria"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuASSXAf3l4ybBA-bZtAT84Y3kHwNK4hkwkJ3rtlCy5gjxrtqtu6mcCCUBHYmaWnaUVXSV5RODpRO9vZJ6SYcFZG5TgG76OwPxRAqAP6wqM_gyz-l7sYrjgWqY7LslihPKgZX0di-8Ef4LMJemRx8f5LS5vJR7TyvN9WcD7IXeqHZjUwTPCxtWfcK_zRXxnhDr3Z89pTIrrN7tsmJ31SHEcBMnXjx7KoQanwcRs3Jon97u_5YjVyVDgP" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+              <div
+                class="absolute bottom-3 left-3 bg-black/55 backdrop-blur-md rounded-lg px-3 py-1.5 font-mono-data text-xs text-surface-tint">
+                DASHBOARD DE TELEMETRIA</div>
+              <div
+                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="material-symbols-outlined text-white/90 text-4xl">zoom_in</span>
+              </div>
+            </div>
+<div
+              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-full reveal stagger-4 lg:col-start-2 lg:row-start-3"
+              data-src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787326690/IMG_1587_dtoviz.png" role="button" tabindex="0">
+              <img alt="Screenshot METAR ao Vivo"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787326690/IMG_1587_dtoviz.png" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div
+                class="absolute bottom-3 left-3 bg-black/55 backdrop-blur-md rounded-lg px-3 py-1.5 font-mono-data text-xs text-surface-tint">
+                METAR AO VIVO</div>
+              <div
+                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="material-symbols-outlined text-white/90 text-4xl">zoom_in</span>
+              </div>
+            </div>
+<div
+              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-full reveal stagger-5 lg:col-start-3 lg:row-start-3 lg:row-span-2"
+              data-src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787316765/nota_despesa_bupn93.png"
+              role="button" tabindex="0">
+              <img alt="Screenshot Nota de Despesa"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787316765/nota_despesa_bupn93.png" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+              <div
+                class="absolute bottom-3 left-3 bg-black/55 backdrop-blur-md rounded-lg px-3 py-1.5 font-mono-data text-xs text-surface-tint">
+                NOTAS DE DESPESA</div>
+              <div
+                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="material-symbols-outlined text-white/90 text-4xl">zoom_in</span>
+              </div>
+            </div>
+<div
+              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-full reveal stagger-6 lg:col-start-1 lg:row-start-4 lg:col-span-2"
+              data-src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787401246/ROTAS_VA_1_yt8ntx.png"
+              role="button" tabindex="0">
+              <img alt="Screenshot Planejamento de Rota"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787401246/ROTAS_VA_1_yt8ntx.png" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+              <div
+                class="absolute bottom-3 left-3 bg-black/55 backdrop-blur-md rounded-lg px-3 py-1.5 font-mono-data text-xs text-surface-tint">
+                ROTA</div>
+              <div
+                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <span class="material-symbols-outlined text-white/90 text-4xl">zoom_in</span>
+              </div>
+            </div>
+<div
               class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-full reveal stagger-7 lg:col-start-1 lg:row-start-5"
               data-src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787322988/RELAT%C3%93RIO_DE_VOO_COMPLETO_alv4zb.png" role="button" tabindex="0">
               <img alt="Screenshot Relatórios no Discord"
@@ -893,7 +912,7 @@
                 <span class="material-symbols-outlined text-white/90 text-4xl">zoom_in</span>
               </div>
             </div>
-            <div
+<div
               class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-full reveal stagger-8 lg:col-start-2 lg:row-start-5"
               data-src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787320479/ESCALAS_2_xee8et.png"
               role="button" tabindex="0">
@@ -909,17 +928,17 @@
                 <span class="material-symbols-outlined text-white/90 text-4xl">zoom_in</span>
               </div>
             </div>
-            <div
-              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-full reveal stagger-9 lg:col-start-3 lg:row-start-3 lg:row-span-2"
-              data-src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787316765/nota_despesa_bupn93.png"
+<div
+              class="gallery-item group relative rounded-2xl overflow-hidden border border-black/10 shadow-[0_10px_30px_rgba(3,13,37,0.15)] cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-full reveal stagger-9 lg:col-start-3 lg:row-start-5"
+              data-src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787319941/card_audio_ampliado_ayb7i8.jpg"
               role="button" tabindex="0">
-              <img alt="Screenshot Nota de Despesa"
+              <img alt="Screenshot Áudio de Cabine"
                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787316765/nota_despesa_bupn93.png" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                src="https://res.cloudinary.com/dqtjn9so2/image/upload/v1787317871/CARD_%C3%81UDIO_DE_CABINE_mhcbfg.png" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               <div
                 class="absolute bottom-3 left-3 bg-black/55 backdrop-blur-md rounded-lg px-3 py-1.5 font-mono-data text-xs text-surface-tint">
-                NOTAS DE DESPESA</div>
+                ÁUDIO DE CABINE</div>
               <div
                 class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                 <span class="material-symbols-outlined text-white/90 text-4xl">zoom_in</span>
@@ -935,30 +954,46 @@
           class="absolute top-6 right-6 w-12 h-12 rounded-full bg-surface-container/80 border border-white/10 flex items-center justify-center text-on-surface hover:text-surface-tint transition-colors z-10"
           id="lightbox-close" aria-label="Fechar"><span class="material-symbols-outlined text-3xl">close</span></button>
         <div
-          class="absolute top-6 left-6 flex items-center gap-2 z-10 bg-surface-container/80 backdrop-blur-md border border-white/10 rounded-full p-1.5"
+          class="absolute top-6 left-6 flex flex-col items-center gap-1.5 z-10 bg-surface-container/80 backdrop-blur-md border border-white/10 rounded-2xl p-1.5"
           id="lightbox-controls" aria-label="Controles de zoom">
-          <button
-            class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:text-surface-tint hover:bg-surface-container-high transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-            id="lightbox-zoom-out" aria-label="Diminuir zoom"><span
-              class="material-symbols-outlined text-xl">remove</span></button>
-          <button
-            class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:text-surface-tint hover:bg-surface-container-high transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-            id="lightbox-zoom-in" aria-label="Aumentar zoom"><span
-              class="material-symbols-outlined text-xl">add</span></button>
-          <button
-            class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:text-surface-tint hover:bg-surface-container-high transition-colors"
-            id="lightbox-zoom-reset" aria-label="Resetar zoom"><span
-              class="material-symbols-outlined text-xl">zoom_in_map</span></button>
+          <div class="flex items-center gap-2">
+            <button
+              class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:text-surface-tint hover:bg-surface-container-high transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              id="lightbox-zoom-out" aria-label="Diminuir zoom"><span
+                class="material-symbols-outlined text-xl">remove</span></button>
+            <button
+              class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:text-surface-tint hover:bg-surface-container-high transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              id="lightbox-zoom-in" aria-label="Aumentar zoom"><span
+                class="material-symbols-outlined text-xl">add</span></button>
+            <button
+              class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:text-surface-tint hover:bg-surface-container-high transition-colors"
+              id="lightbox-zoom-reset" aria-label="Resetar zoom"><span
+                class="material-symbols-outlined text-xl">zoom_in_map</span></button>
+          </div>
+          <span class="hidden sm:inline text-xs font-mono-data text-white/70 px-1">Clique para zoom 2×</span>
         </div>
+        <button
+          class="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-surface-container/80 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:text-surface-tint hover:bg-surface-container/90 transition-all z-10 disabled:opacity-30 disabled:cursor-not-allowed disabled:pointer-events-none"
+          id="lightbox-prev" aria-label="Imagem anterior"><span class="material-symbols-outlined text-3xl">chevron_left</span></button>
+        <button
+          class="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-surface-container/80 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:text-surface-tint hover:bg-surface-container/90 transition-all z-10 disabled:opacity-30 disabled:cursor-not-allowed disabled:pointer-events-none"
+          id="lightbox-next" aria-label="Próxima imagem"><span class="material-symbols-outlined text-3xl">chevron_right</span></button>
         <div class="w-full h-full flex items-center justify-center overflow-hidden touch-none" id="lightbox-viewport">
           <img alt="Imagem ampliada"
             class="max-w-full max-h-[85vh] rounded-2xl border border-white/10 shadow-2xl select-none will-change-transform touch-none"
             id="lightbox-img" src="" draggable="false"
             style="transform-origin: center center; transition: transform 0.25s ease; cursor: zoom-in;" />
         </div>
-        <span
-          class="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs font-mono-data text-white/60 bg-black/40 backdrop-blur-sm px-3 py-1.5 rounded-full pointer-events-none hidden sm:block">Clique
-          para zoom 2× • Arraste para mover • Scroll para zoom</span>
+        <div class="absolute bottom-0 left-0 right-0 z-10 bg-gradient-to-t from-black/80 via-black/40 to-transparent pt-10 pb-4 px-4 flex flex-col items-center gap-3"
+          id="lightbox-footer">
+          <div class="flex items-center gap-3">
+            <span id="lightbox-counter"
+              class="text-xs font-mono-data text-white/90 bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10">1 / 9</span>
+            <span id="lightbox-title" class="text-sm font-title-md text-white tracking-wide" style="text-shadow: 0 1px 8px rgba(0,0,0,0.6)"></span>
+          </div>
+          <div id="lightbox-thumbs" class="flex items-center gap-2 overflow-x-auto max-w-full px-2 py-1 scrollbar-none" style="scrollbar-width: none; -ms-overflow-style: none;">
+          </div>
+        </div>
       </div>
       <!-- FAQ Section -->
       <section class="w-full py-12 xl:py-14 2xl:py-16 bg-background relative overflow-hidden" id="faq">
@@ -1150,19 +1185,30 @@
         window.addEventListener('scroll', onScroll, { passive: true });
         onScroll();
 
+        function setNavMobile(open) {
+          if (!navMobile || !navToggle) return;
+          if (open) {
+            navMobile.classList.remove('opacity-0', '-translate-y-3', 'pointer-events-none');
+            navMobile.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+            navToggle.setAttribute('aria-expanded', 'true');
+            var icon = navToggle.querySelector('.material-symbols-outlined');
+            if (icon) icon.textContent = 'close';
+          } else {
+            navMobile.classList.add('opacity-0', '-translate-y-3', 'pointer-events-none');
+            navMobile.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+            navToggle.setAttribute('aria-expanded', 'false');
+            var icon2 = navToggle.querySelector('.material-symbols-outlined');
+            if (icon2) icon2.textContent = 'menu';
+          }
+        }
         if (navToggle) {
           navToggle.addEventListener('click', function () {
-            var open = navMobile.classList.toggle('hidden');
-            navToggle.setAttribute('aria-expanded', open ? 'false' : 'true');
-            var icon = navToggle.querySelector('.material-symbols-outlined');
-            if (icon) { icon.textContent = open ? 'menu' : 'close'; }
+            var isClosed = navMobile.classList.contains('opacity-0');
+            setNavMobile(isClosed);
           });
           navMobile.querySelectorAll('a').forEach(function (a) {
             a.addEventListener('click', function () {
-              navMobile.classList.add('hidden');
-              navToggle.setAttribute('aria-expanded', 'false');
-              var icon = navToggle.querySelector('.material-symbols-outlined');
-              if (icon) { icon.textContent = 'menu'; }
+              setNavMobile(false);
             });
           });
         }
@@ -1170,11 +1216,8 @@
         var homeLink = document.getElementById('home-link');
         if (homeLink) {
           homeLink.addEventListener('click', function () {
-            if (navMobile && !navMobile.classList.contains('hidden')) {
-              navMobile.classList.add('hidden');
-              navToggle.setAttribute('aria-expanded', 'false');
-              var icon = navToggle.querySelector('.material-symbols-outlined');
-              if (icon) { icon.textContent = 'menu'; }
+            if (navMobile && navMobile.classList.contains('opacity-100')) {
+              setNavMobile(false);
             }
             window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
           });
@@ -1289,8 +1332,19 @@
         }
 
         var lightboxScale = 1, lightboxTx = 0, lightboxTy = 0, lightboxDragging = false, lightboxDidDrag = false, lightboxStartX = 0, lightboxStartY = 0, lightboxOriginTx = 0, lightboxOriginTy = 0, lightboxPinchDist = 0, lightboxPinchScale = 1;
+        var galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+        var currentIndex = 0;
+        var lightboxSwipeStartX = 0, lightboxSwipeStartY = 0;
         function getLightboxImg() { return document.getElementById('lightbox-img'); }
         function getLightbox() { return document.getElementById('lightbox'); }
+        function getGalleryTitle(item) {
+          if (!item) return '';
+          var label = item.querySelector('.font-mono-data');
+          if (label && label.textContent.trim()) return label.textContent.trim();
+          var img = item.querySelector('img');
+          if (img && img.alt) return img.alt.replace('Screenshot ', '').trim();
+          return '';
+        }
         function applyLightboxTransform(noTransition) {
           var img = getLightboxImg();
           if (!img) return;
@@ -1341,17 +1395,116 @@
           clampLightboxPan();
           applyLightboxTransform(false);
         }
+        function updateLightboxUI() {
+          var total = galleryItems.length;
+          var counter = document.getElementById('lightbox-counter');
+          var titleEl = document.getElementById('lightbox-title');
+          var prev = document.getElementById('lightbox-prev');
+          var next = document.getElementById('lightbox-next');
+          if (counter) counter.textContent = (currentIndex + 1) + ' / ' + total;
+          if (titleEl) titleEl.textContent = getGalleryTitle(galleryItems[currentIndex]);
+          if (prev) prev.disabled = currentIndex === 0;
+          if (next) next.disabled = currentIndex === total - 1;
+          var thumbs = document.getElementById('lightbox-thumbs');
+          if (thumbs) {
+            var btns = thumbs.querySelectorAll('button');
+            btns.forEach(function(b,i){
+              if (i === currentIndex) { b.classList.add('ring-2','ring-surface-tint','opacity-100'); b.classList.remove('opacity-60'); }
+              else { b.classList.remove('ring-2','ring-surface-tint','opacity-100'); b.classList.add('opacity-60'); }
+            });
+            var active = btns[currentIndex];
+            if (active) active.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
+          }
+          [currentIndex-1, currentIndex+1].forEach(function(i){
+            if (i>=0 && i<total) { var im = new Image(); im.src = galleryItems[i].getAttribute('data-src'); }
+          });
+        }
+        function setLightboxIndex(idx, dir) {
+          if (idx < 0 || idx >= galleryItems.length) return;
+          var prevIdx = currentIndex;
+          var isNav = typeof dir === 'number';
+          if (!isNav) dir = idx > prevIdx ? 1 : -1;
+          // initial open without nav: no slide
+          var isInitial = !document.getElementById('lightbox') || document.getElementById('lightbox').classList.contains('hidden');
+          currentIndex = idx;
+          var item = galleryItems[currentIndex];
+          var src = item.getAttribute('data-src');
+          var img = getLightboxImg();
+          if (img) {
+            if (isInitial || !isNav) {
+              img.style.transition = 'none';
+              img.style.transform = 'translate(0,0) scale(1)';
+              img.style.opacity = '1';
+              img.src = src || '';
+              img.alt = getGalleryTitle(item) || 'Imagem ampliada';
+              var done = function(){ resetLightboxZoom(true); img.style.transition = 'transform 0.25s ease'; };
+              img.onload = done;
+              if (img.complete) done();
+            } else {
+              // pure slide without fade
+              img.style.transition = 'transform 0.35s cubic-bezier(0.32,0,0.67,0)';
+              img.style.transform = 'translate(' + (-dir * 120) + 'px, 0) scale(1)';
+              setTimeout(function(){
+                img.src = src || '';
+                img.alt = getGalleryTitle(item) || 'Imagem ampliada';
+                img.style.transition = 'none';
+                img.style.transform = 'translate(' + (dir * 120) + 'px, 0) scale(1)';
+                void img.offsetWidth;
+                var doneSlide = function(){
+                  resetLightboxZoom(true);
+                  img.style.transition = 'transform 0.35s cubic-bezier(0.32,0,0.67,0)';
+                  img.style.transform = 'translate(0,0) scale(1)';
+                };
+                img.onload = doneSlide;
+                if (img.complete) doneSlide();
+                else setTimeout(doneSlide, 30);
+              }, 350);
+            }
+          }
+          updateLightboxUI();
+        }
+        function navigateLightbox(dir){
+          if (lightboxScale !== 1) return;
+          var next = currentIndex + dir;
+          if (next < 0 || next >= galleryItems.length) return;
+          setLightboxIndex(next, dir);
+        }
+        function initLightboxThumbs(){
+          var thumbs = document.getElementById('lightbox-thumbs');
+          if (!thumbs || thumbs.children.length) return;
+          galleryItems.forEach(function(item, idx){
+            var btn = document.createElement('button');
+            btn.className = 'flex-shrink-0 w-16 h-10 rounded-lg overflow-hidden border border-white/10 opacity-60 hover:opacity-100 transition-all';
+            btn.setAttribute('aria-label', 'Ir para ' + getGalleryTitle(item));
+            var tImg = document.createElement('img');
+            tImg.src = item.getAttribute('data-src');
+            tImg.alt = '';
+            tImg.className = 'w-full h-full object-cover';
+            tImg.loading = 'lazy';
+            btn.appendChild(tImg);
+            btn.addEventListener('click', function(e){
+              e.stopPropagation();
+              var dir = idx > currentIndex ? 1 : -1;
+              if (idx === currentIndex) return;
+              setLightboxIndex(idx, dir);
+            });
+            thumbs.appendChild(btn);
+          });
+        }
         function openLightbox(src) {
+          var idx = -1;
+          if (typeof src === 'number') idx = src;
+          else if (src) idx = galleryItems.findIndex(function(it){ return it.getAttribute('data-src') === src; });
+          if (idx === -1) idx = 0;
+          currentIndex = idx;
           var box = getLightbox();
           if (box) {
-            var img = getLightboxImg();
-            if (img) img.src = src || '';
+            initLightboxThumbs();
+            setLightboxIndex(currentIndex);
             resetLightboxZoom(true);
             box.classList.remove('hidden');
             box.classList.add('flex');
             document.body.style.overflow = 'hidden';
-            // ensure transform after image load/size known
-            if (img) { img.onload = function () { resetLightboxZoom(true); }; }
           }
         }
         function closeLightbox() {
@@ -1379,15 +1532,35 @@
           var zinBtn = document.getElementById('lightbox-zoom-in');
           var zoutBtn = document.getElementById('lightbox-zoom-out');
           var zresetBtn = document.getElementById('lightbox-zoom-reset');
+          var prevBtn = document.getElementById('lightbox-prev');
+          var nextBtn = document.getElementById('lightbox-next');
           if (zinBtn) zinBtn.addEventListener('click', function (e) { e.stopPropagation(); zoomLightboxAt(0.5, window.innerWidth / 2, window.innerHeight / 2); });
           if (zoutBtn) zoutBtn.addEventListener('click', function (e) { e.stopPropagation(); zoomLightboxAt(-0.5, window.innerWidth / 2, window.innerHeight / 2); });
           if (zresetBtn) zresetBtn.addEventListener('click', function (e) { e.stopPropagation(); resetLightboxZoom(false); });
+          if (prevBtn) prevBtn.addEventListener('click', function(e){ e.stopPropagation(); navigateLightbox(-1); });
+          if (nextBtn) nextBtn.addEventListener('click', function(e){ e.stopPropagation(); navigateLightbox(1); });
           lightbox.addEventListener('click', function (e) {
             if (e.target === lightbox || e.target === lbViewport) {
               if (lightboxDidDrag) { lightboxDidDrag = false; return; }
               if (lightboxScale > 1) resetLightboxZoom(false); else closeLightbox();
             }
           });
+          // swipe navigation only when not zoomed
+          var swipeEl = lbViewport || lightbox;
+          swipeEl.addEventListener('touchstart', function(e){
+            if (lightboxScale !== 1) return;
+            if (e.touches.length === 1) { lightboxSwipeStartX = e.touches[0].clientX; lightboxSwipeStartY = e.touches[0].clientY; }
+          }, {passive:true});
+          swipeEl.addEventListener('touchend', function(e){
+            if (lightboxScale !== 1) return;
+            if (!lightboxSwipeStartX) return;
+            var dx = (e.changedTouches[0].clientX - lightboxSwipeStartX);
+            var dy = (e.changedTouches[0].clientY - lightboxSwipeStartY);
+            if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)) {
+              if (dx < 0) navigateLightbox(1); else navigateLightbox(-1);
+            }
+            lightboxSwipeStartX = 0;
+          }, {passive:true});
           if (lbImg) {
             lbImg.addEventListener('click', function (e) {
               e.stopPropagation();
@@ -1454,6 +1627,8 @@
             if (e.key === 'Escape') {
               if (lightboxScale > 1) resetLightboxZoom(false); else closeLightbox();
             }
+            if (e.key === 'ArrowLeft') { e.preventDefault(); navigateLightbox(-1); }
+            if (e.key === 'ArrowRight') { e.preventDefault(); navigateLightbox(1); }
             if (e.key === '+' || e.key === '=') zoomLightboxAt(0.2, window.innerWidth / 2, window.innerHeight / 2);
             if (e.key === '-' || e.key === '_') zoomLightboxAt(-0.2, window.innerWidth / 2, window.innerHeight / 2);
             if (e.key === '0') resetLightboxZoom(false);
